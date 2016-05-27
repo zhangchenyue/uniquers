@@ -41,6 +41,7 @@ if (server.get('env') === 'development') {
     server.use(function (err, req, res, next) {
         res.status(err.status || 500);
         console.log(err.status + err.message + req.url);
+        res.end();
     });
 }
 
@@ -49,6 +50,7 @@ if (server.get('env') === 'development') {
 server.use(function (err, req, res, next) {
     res.status(err.status || 500);
     console.log(err.status + err.message + + req.url);
+    res.end();
 });
 
 
