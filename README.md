@@ -9,34 +9,18 @@ fashion cloth renting
 > npm install -g gulp
 ``` 
 
-
 ##Steps
-1. Clone this repository to your computer
-```
-> git clone https://github.com/zhangchenyue/uniquers.git
-> cd uniquers
-```
-2. Install dependacies using NPM
-```
-> npm install
-``` 
-
-##Steps
-
-1. Clone this repository to your computer
+####Clone this repository to your computer
 ```
 > git clone https://github.com/zhangchenyue/uniquers.git
 > cd uniquers
 ``` 
-
-2. Install dependacies using NPM
+#####Install dependacies using NPM
 ```
 > npm install
 ```
-
-3. Start application
+#####Start application
 ```
 > npm start
 ```
-
-4. Open bowser and visit http://localhost:3000 to see the index page
+#####Open bowser and visit http://localhost:3000 to see the index page
