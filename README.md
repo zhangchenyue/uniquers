@@ -12,10 +12,7 @@ fashion cloth renting
 
 ##Steps
 1. Clone this repository to your computer
-```
-> git clone https://github.com/zhangchenyue/uniquers.git
-> cd uniquers
-``` 
+
 2. Install gulp globally by NPM
 ```
 > npm install -g gulp
