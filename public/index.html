@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <title>Uniquers</title>
+    <link rel="stylesheet" href="styles/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/lib/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body ng-app="uniquers.app">
+    <nav ng-if="!splash" class="navbar navbar-default navbar-fixed-bottom">
+
+        <div class="container-fluid">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li style="line-height:30px;">
+                        <a href="/"><img src="favicon.ico" alt=""></a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            <span>首页</span>
+                         </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            <span>搭配</span>
+                         </a>
+                    </li>
+                   <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                            <span>分类</span>
+                         </a>
+                    </li>
+                   <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+                            <span>新款</span>
+                         </a>
+                    </li>
+                   <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            <span>我们</span>
+                         </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="ngView"></div>
+    <script src="scripts/lib/jquery.min.js"></script>
+    <script src="scripts/lib/bootstrap.min.js"></script>
+    <script src="scripts/lib/angular.js"></script>
+    <script src="scripts/lib/angular-route.js"></script>
+    <script src="scripts/lib/angular-animate.js"></script>
+    <!--<script src="scripts/lib/angular.min.js"></script>
+    <script src="scripts/lib/angular-route.min.js"></script>
+    <script src="scripts/lib/angular-animate.min.js"></script>-->
+    <script src="scripts/modules/uniquersApp.js"></script>
+    <script src="scripts/controllers/WelcomeCtrl.js"></script>
+    <script src="scripts/controllers/HomeCtrl.js"></script>
+</body>
+
+</html>
