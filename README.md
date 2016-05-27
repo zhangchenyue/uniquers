@@ -16,11 +16,9 @@ fashion cloth renting
 > git clone https://github.com/zhangchenyue/uniquers.git
 > cd uniquers
 ```
-2.
-
-2. Install gulp globally by NPM
+2. Install dependacies using NPM
 ```
-> npm install -g gulp
+> npm install
 ``` 
 
 ##Steps
