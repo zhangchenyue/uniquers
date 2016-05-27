@@ -38,7 +38,7 @@ gulp.task('min:js', ['clean:minjs'],function () {
     'public/scripts/services/*.js'
   ], { base: '.' })
     .pipe(concat('minJS.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./public/scripts/'));
 });
 
