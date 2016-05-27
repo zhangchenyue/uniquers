@@ -12,6 +12,10 @@ fashion cloth renting
 
 ##Steps
 1. Clone this repository to your computer
+```
+>
+```
+2.
 
 2. Install gulp globally by NPM
 ```
