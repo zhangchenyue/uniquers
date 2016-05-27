@@ -8,44 +8,27 @@ rimraf = require('rimraf'),
   uglify = require('gulp-uglify');
 
 var basePath = './public'
-var jsLibBundle = basePath + '/scripts/minlib.js';
-var jsSiteBundle = basePath + '/scripts/minsite.js';
+
 var cssLib = basePath + '/styles/lib/*.css'
 var cssSite = basePath + '/styles/*.css'
 var cssLibBundle = basePath + '/styles/lib/min-lib.css'
 var cssSiteBundle = basePath + '/styles/min-site.css'
 
-gulp.task('clean:minlibjs', function (cb) {
-  rimraf(jsLibBundle, cb);
+gulp.task('clean:minjs', function (cb) {
+  rimraf('./public/scripts/minJS.js', cb);
 })
 
-gulp.task('clean:minsitejs', function (cb) {
-  rimraf(jsSiteBundle, cb);
-})
-
-gulp.task('clean:minlibcss', function (cb) {
-  rimraf(cssLibBundle, cb);
+gulp.task('clean:mincss', function (cb) {
+  rimraf('./public/styles/minCSS.css', cb);
 });
 
-gulp.task('clean:minsitecss', function (cb) {
-  rimraf(cssSiteBundle, cb);
-})
-
-gulp.task('min:libjs', function () {
+gulp.task('min:js', ['clean:minjs'],function () {
   gulp.src([
-    'public/scripts/lib/jquery.min.js', 
+    'public/scripts/lib/jquery.min.js',
     'public/scripts/lib/bootstrap.min.js',
-    'public/scripts/lib/angular.js',
+    'public/scripts/lib/angular.min.js',
     'public/scripts/lib/angular-route.min.js',
-    'public/scripts/lib/angular-annimate.min.js'
-  ], { base: '.' })
-    .pipe(concat('minlib.js'))
-    //.pipe(uglify())
-    .pipe(gulp.dest('public/scripts/'));
-});
-
-gulp.task('min:sitejs', function () {
-  gulp.src([
+    'public/scripts/lib/angular-animate.min.js',
     'public/scripts/common/*.js',
     'public/scripts/modules/*.js',
     'public/scripts/controllers/*.js',
@@ -53,26 +36,28 @@ gulp.task('min:sitejs', function () {
     'public/scripts/effects/*.js',
     'public/scripts/filters/*.js',
     'public/scripts/services/*.js'
-
   ], { base: '.' })
-    .pipe(concat('minsite.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('public/scripts/'));
+    .pipe(concat('minJS.js'))
+    //.pipe(uglify())
+    .pipe(gulp.dest('./public/scripts/'));
 });
 
-gulp.task('min:libcss', function () {
-  gulp.src([cssLib], { base: '.' })
-    .pipe(concat('min-lib.css'))
+gulp.task('min:css', ['clean:mincss'], function () {
+  gulp.src(['./public/styles/*.css'], { base: '.' })
+    .pipe(concat('minCSS.css'))
     .pipe(cssmin())
-    .pipe(gulp.dest('public/styles/lib/'));
+    .pipe(gulp.dest('./public/styles/'));
 });
 
-gulp.task('min:sitecss', function () {
-  gulp.src([cssSite], { base: '.' })
-    .pipe(concat('min-site.css'))
-    .pipe(cssmin())
-    .pipe(gulp.dest('public/styles/'));
-});
+gulp.task('clean',[
+  'clean:minjs',
+  'clean:mincss'
+]);
+
+gulp.task('min',[
+  'min:js',
+  'min:css'
+]);
 
 gulp.task('develop', function () {
   livereload.listen();
@@ -92,13 +77,7 @@ gulp.task('develop', function () {
 });
 
 gulp.task('default', [
-  'clean:minlibjs',
-  'clean:minsitejs',
-  'clean:minlibcss',
-  'clean:minsitecss',
-  'min:libjs',
-    'min:sitejs',
-  'min:libcss',
-  'min:sitecss',
+  'clean',
+  'min',
   'develop'
 ]);
