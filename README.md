@@ -10,8 +10,8 @@ fashion cloth renting
 ``` 
 
 
-##Preconditions
-1. Install nodejs from http://nodejs.org
+##Steps
+1. Clone this repository to your computer
 
 2. Install gulp globally by NPM
 ```
