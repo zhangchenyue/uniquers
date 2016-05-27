@@ -1,18 +1,12 @@
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   plumber = require('gulp-plumber'),
-  livereload = require('gulp-livereload');
-rimraf = require('rimraf'),
+  livereload = require('gulp-livereload'),
+  rimraf = require('rimraf'),
   concat = require('gulp-concat'),
   cssmin = require('gulp-cssmin'),
-  uglify = require('gulp-uglify');
-
-var basePath = './public'
-
-var cssLib = basePath + '/styles/lib/*.css'
-var cssSite = basePath + '/styles/*.css'
-var cssLibBundle = basePath + '/styles/lib/min-lib.css'
-var cssSiteBundle = basePath + '/styles/min-site.css'
+  uglify = require('gulp-uglify'),
+  browserSync = require('browser-sync');
 
 gulp.task('clean:minjs', function (cb) {
   rimraf('./public/scripts/minJS.js', cb);
@@ -22,7 +16,7 @@ gulp.task('clean:mincss', function (cb) {
   rimraf('./public/styles/minCSS.css', cb);
 });
 
-gulp.task('min:js', ['clean:minjs'],function () {
+gulp.task('min:js', ['clean:minjs'], function () {
   gulp.src([
     'public/scripts/lib/jquery.min.js',
     'public/scripts/lib/bootstrap.min.js',
@@ -49,12 +43,12 @@ gulp.task('min:css', ['clean:mincss'], function () {
     .pipe(gulp.dest('./public/styles/'));
 });
 
-gulp.task('clean',[
+gulp.task('clean', [
   'clean:minjs',
   'clean:mincss'
 ]);
 
-gulp.task('min',[
+gulp.task('min', [
   'min:js',
   'min:css'
 ]);
@@ -76,8 +70,19 @@ gulp.task('develop', function () {
   });
 });
 
+
+gulp.task('browser-sync', ['develop'], function () {
+  browserSync.init(null, {
+    proxy: 'http://localhost:3000',
+    files: ['public/**/*.*'],
+    browser: 'google chrome',
+    notify: false,
+    port: 5000
+  });
+});
+
 gulp.task('default', [
   'clean',
   'min',
-  'develop'
+  'browser-sync'
 ]);
