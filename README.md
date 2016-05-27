@@ -9,6 +9,15 @@ fashion cloth renting
 > npm install -g gulp
 ``` 
 
+
+##Preconditions
+1. Install nodejs from http://nodejs.org
+
+2. Install gulp globally by NPM
+```
+> npm install -g gulp
+``` 
+
 ##Steps
 
 1. Clone this repository to your computer
