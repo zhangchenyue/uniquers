@@ -224,13 +224,13 @@
 
 /* scale up */
 @keyframes scaleUp {
-	from 		{ opacity: 0.3; transform: scale(1); }
+	from 		{ opacity: 0.5; transform: scale(1); }
 }
 @-moz-keyframes scaleUp {
-	from 		{ opacity: 0.3; -moz-transform: scale(1); }
+	from 		{ opacity: 0.5; -moz-transform: scale(1); }
 }
 @-webkit-keyframes scaleUp {
-	from 		{ opacity: 0.3; -webkit-transform: scale(1); }
+	from 		{ opacity: 0.5; -webkit-transform: scale(1); }
 }
 
 /* scale up */
