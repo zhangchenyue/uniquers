@@ -9,11 +9,11 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync');
 
 gulp.task('clean:minjs', function (cb) {
-  rimraf('./public/scripts/minJS.js', cb);
+  rimraf('./public/scripts/min.js', cb);
 })
 
 gulp.task('clean:mincss', function (cb) {
-  rimraf('./public/styles/minCSS.css', cb);
+  rimraf('./public/styles/min.css', cb);
 });
 
 gulp.task('min:js', ['clean:minjs'], function () {
@@ -31,14 +31,14 @@ gulp.task('min:js', ['clean:minjs'], function () {
     'public/scripts/filters/*.js',
     'public/scripts/services/*.js'
   ], { base: '.' })
-    .pipe(concat('minJS.js'))
+    .pipe(concat('min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./public/scripts/'));
 });
 
 gulp.task('min:css', ['clean:mincss'], function () {
   gulp.src(['./public/styles/*.css'], { base: '.' })
-    .pipe(concat('minCSS.css'))
+    .pipe(concat('min.css'))
     .pipe(cssmin())
     .pipe(gulp.dest('./public/styles/'));
 });
