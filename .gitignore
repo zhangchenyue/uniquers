@@ -34,7 +34,3 @@ public/components
 
 # Optional REPL history
 .node_repl_history
-
-#min files
-min.css
-min.js
