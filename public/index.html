@@ -7,62 +7,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script>
-        document.write('<base href="' + document.location + '" />');
-    </script>
+    <base href="/">
     <title>Uniquers</title>
     <link rel="stylesheet" href="styles/min.css">
 </head>
 
 <body ng-app="uniquers.app">
-    <nav ng-if="!splash" class="navbar navbar-default navbar-fixed-bottom">
+    <div class="top-nav container-fluid">
+        <nav ng-if="!splash" class="navbar navbar-inverse navbar-fixed-top">
+            <ul class="nav navbar-nav">
+                <li>
+                    <span class="brand">UNIQUERS</span>
+                </li>
+            </ul>
 
-        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span>其他</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li style="line-height:30px;">
-                        <a href="/"><img src="favicon.ico" alt=""></a>
-                    </li>
-                    <li class="active">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                            <span>首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                            <span>搭配</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                            <span>分类</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-                            <span>新款</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <span>我们</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <div class="container-fluid">
+        <div class="ngView"></div>
+    </div>
 
-    <div class="ngView"></div>
+    <div class="bottom-nav container-fluid">
+        <nav ng-if="!splash" class="navbar navbar-default navbar-fixed-bottom">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">
+                        <img src="favicon.ico" alt="">
+                        <span>角色</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        <span>搭配</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                        <span>分类</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+                        <span>新款</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <span>我们</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+
     <script src="scripts/min.js"></script>
 </body>
 
