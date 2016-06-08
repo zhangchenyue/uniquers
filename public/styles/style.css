@@ -162,13 +162,33 @@ html,body {
 }
 
 .page-home-feature-content .works{
-    float:right;
+        float: right;
+    width: calc(100% - 120px);
+    overflow-x: auto;
+    height: 100%;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    padding:1.5em .5em 0 .5em;
 }
 
-
-.page-home-feature-content .works img{
-    width: 96px;
+.page-home-feature-content .works .work-item{
+    display: inline;
+    position: relative;
+        margin: 0 0.5em;
 }
+
+span.item-spec {
+    position: absolute;
+    left: 50%;
+    bottom: -132px;
+}
+
+.page-home-feature-content .works .work-item img{
+    width: auto;
+    height: 85%;
+}
+
 
 .profile-woman{
     position: absolute;
@@ -243,4 +263,29 @@ html,body {
 }
 .top-nav a{
     text-decoration: none;
+}
+
+.party-suggest-designer,
+.ol-suggest-designer,
+.vocation-suggest-designer{
+    text-align:center;
+    position:absolute; 
+    width:100%; 
+    height:100px;
+    bottom: 0;
+    line-height:100px;
+    font-weight:400;
+    color: white;
+}
+
+.party-suggest-designer{
+    background:rgba(234,75,126,0.5);
+}
+
+.ol-suggest-designer{
+    background:rgba(170,114,211,0.5);
+}
+
+.vocation-suggest-designer{
+    background:rgba(98,167,232,0.5);
 }
