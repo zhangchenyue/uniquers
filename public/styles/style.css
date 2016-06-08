@@ -148,7 +148,7 @@ html,body {
 
 .page-home-feature-content{
     padding: 0.2em 0;
-    height: 264px;
+    height: 224px;
 }
 
 .page-home-feature-content .designer{
@@ -181,7 +181,7 @@ html,body {
 span.item-spec {
     position: absolute;
     left: 50%;
-    bottom: -132px;
+    bottom: -105px;
 }
 
 .page-home-feature-content .works .work-item img{
