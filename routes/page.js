@@ -5,7 +5,14 @@ var path = require('path');
 var pageRoutes = [
   '/',
   '/home',
-  'welcome'
+  '/welcome',
+  '/match',
+  '/kind',
+  '/thenew',
+  '/about', 
+  '/party',
+  '/ol',
+  '/vacation'
 ];
 
 pageRoutes.forEach(function (route) {

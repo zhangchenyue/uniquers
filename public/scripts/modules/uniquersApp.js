@@ -9,7 +9,7 @@ angular.module('uniquers.controllers', [
 
 
 
-angular.module('uniquers.app',['ngRoute']).run('$rootScope', function ($rootScope) {
+angular.module('uniquers.app', ['ngRoute']).run('$rootScope', function ($rootScope) {
     // publish current transition direction on rootScope
     $rootScope.direction = 'ltr';
     // listen change start events
@@ -34,6 +34,14 @@ angular.module('uniquers.app', [
     $routeProvider
         .when('/', { templateUrl: '/views/welcome.html', controller: 'WelcomeCtrl' })
         .when('/home', { templateUrl: '/views/home.html', controller: 'HomeCtrl' })
+        .when('/match', { templateUrl: '/views/match.html', controller: 'MatchCtrl' })
+        .when('/kind', { templateUrl: '/views/kind.html', controller: 'KindCtrl' })
+        .when('/thenew', { templateUrl: '/views/thenew.html', controller: 'ThenewCtrl' })
+        .when('/about', { templateUrl: '/views/about.html', controller: 'AboutCtrl' })
+        .when('/party', { templateUrl: '/views/party.html', controller: 'PartyCtrl' })
+        .when('/ol', { templateUrl: '/views/ol.html', controller: 'OlCtrl' })
+        .when('/vacation', { templateUrl: '/views/vacation.html', controller: 'VacationCtrl' })
         .otherwise({ redirectTo: '/' });
     $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
 }]);
