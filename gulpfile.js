@@ -100,5 +100,6 @@ gulp.task('rev', function () {
 gulp.task('default', [
   'clean',
   'min',
+  'rev',
   'browser-sync'
 ]);
