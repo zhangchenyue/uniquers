@@ -10,14 +10,17 @@ var gulp = require('gulp'),
   revCollector = require('gulp-rev-collector'),           //- 路径替换
   browserSync = require('browser-sync');
 
+//clean javascript task
 gulp.task('clean:minjs', function (cb) {
   rimraf('./public/scripts/min-*.js', cb);
 })
 
+//clean css task
 gulp.task('clean:mincss', function (cb) {
   rimraf('./public/styles/min-*.css', cb);
 });
 
+//minify javascript files
 gulp.task('min:js', ['clean:minjs'], function () {
   gulp.src([
     'public/scripts/lib/jquery.min.js',
@@ -41,6 +44,7 @@ gulp.task('min:js', ['clean:minjs'], function () {
     .pipe(gulp.dest('rev/js'));
 });
 
+//minify css files
 gulp.task('min:css', ['clean:mincss'], function () {
   gulp.src(['./public/styles/*.css'], { base: '.' })
     .pipe(concat('min.css'))
@@ -51,16 +55,19 @@ gulp.task('min:css', ['clean:mincss'], function () {
     .pipe(gulp.dest('rev/css'));
 });
 
+//clean javascript and css
 gulp.task('clean', [
   'clean:minjs',
   'clean:mincss'
 ]);
 
+//minify javascript and css files and merge to one file
 gulp.task('min', [
   'min:js',
   'min:css'
 ]);
 
+//for developer use support livereload
 gulp.task('develop', function () {
   livereload.listen();
   nodemon({
@@ -78,7 +85,7 @@ gulp.task('develop', function () {
   });
 });
 
-
+//add browser refresh
 gulp.task('browser-sync', ['develop'], function () {
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
@@ -89,14 +96,16 @@ gulp.task('browser-sync', ['develop'], function () {
   });
 });
 
+//support rewrite url in html
 gulp.task('rev', function () {
-  gulp.src(['./rev/**/*.json', './public/index.html'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+  gulp.src(['./rev/**/*.json', './public/index.html'])
     .pipe(revCollector({
       replaceReved: true
-    }))                                   //- 执行文件内css名的替换
-    .pipe(gulp.dest('./public/'));                     //- 替换后的文件输出的目录
+    }))
+    .pipe(gulp.dest('./public/'));
 });
 
+//final task
 gulp.task('default', [
   'clean',
   'min',
