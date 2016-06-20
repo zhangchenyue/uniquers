@@ -2,10 +2,12 @@ html,body {
   margin: 0;
   padding: 0;
 }
+
 .container,
 .container-fluid{
     padding: 0;
 }
+
 .row{
     margin: 0;
     padding: 0;
@@ -242,6 +244,7 @@ span.item-spec {
  color: white;  
  padding: 0; 
 }
+
 .top-nav span{
     font-size: 900;
     line-height: 36px;

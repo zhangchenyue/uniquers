@@ -12,12 +12,12 @@ var gulp = require('gulp'),
 
 //clean javascript task
 gulp.task('clean:minjs', function (cb) {
-  rimraf('./public/scripts/min-*.js', cb);
+  rimraf('./public/dist/min-*.js', cb);
 })
 
 //clean css task
 gulp.task('clean:mincss', function (cb) {
-  rimraf('./public/styles/min-*.css', cb);
+  rimraf('./public/dist/min-*.css', cb);
 });
 
 //minify javascript files
@@ -39,18 +39,23 @@ gulp.task('min:js', ['clean:minjs'], function () {
     .pipe(concat('min.js'))
     .pipe(uglify())
     .pipe(rev())                                            //- 文件名加MD5后缀
-    .pipe(gulp.dest('./public/scripts/'))
+    .pipe(gulp.dest('./public/dist/'))
     .pipe(rev.manifest())
     .pipe(gulp.dest('rev/js'));
 });
 
 //minify css files
 gulp.task('min:css', ['clean:mincss'], function () {
-  gulp.src(['./public/styles/*.css'], { base: '.' })
+  gulp.src([
+    './public/styles/animate.css',
+    './public/styles/bootstrap.min.css',
+    './public/styles/fonts.css',
+    './public/styles/style.css',
+  ], { base: '.' })
     .pipe(concat('min.css'))
     .pipe(cssmin())
     .pipe(rev())                                            //- 文件名加MD5后缀
-    .pipe(gulp.dest('./public/styles/'))
+    .pipe(gulp.dest('./public/dist/'))
     .pipe(rev.manifest())
     .pipe(gulp.dest('rev/css'));
 });

@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta name="description" content="">
-    <meta name="author" content="">
     <base href="/">
     <title>Uniquers</title>
-    <link rel="stylesheet" href="styles/min-71a663e05c.css">
+    <link rel="stylesheet" href="/dist/min-71a663e05c.css">
 </head>
 
 <body ng-app="uniquers.app">
-    <div class="top-nav container-fluid">
-        <nav ng-if="!splash" class="navbar navbar-inverse navbar-fixed-top">
+    <!--top nav bar-->
+    <div ng-if="!splash" class="top-nav container-fluid">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <ul class="nav navbar-nav">
                 <li>
-                   <a href="/home"><span class="brand">UNIQUERS</span></a> 
+                    <a href="/home"><span class="brand">UNIQUERS</span></a>
                 </li>
             </ul>
             <div class="dropdown">
@@ -36,19 +36,16 @@
         </nav>
     </div>
 
-    <div class="header-placeholder">
+    <!--view content-->
+    <div class="container-fluid">
+        <div class="header-placeholder"></div>
+        <div class="ngView"></div>
+        <div class="footer-placeholder"></div>
     </div>
 
-    <div class="container-fluid">
-        <div class="ngView"></div>
-    </div>
-    
-    
-    <div class="footer-placeholder">
-    </div>
-    
-    <div class="bottom-nav container-fluid">
-        <nav ng-if="!splash" class="navbar navbar-default navbar-fixed-bottom">
+    <!--bottom nav bar-->
+    <div ng-if="!splash" class="bottom-nav container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="/">
@@ -88,12 +85,9 @@
                 </li>
             </ul>
         </nav>
-
     </div>
 
-
-
-    <script src="scripts/min-a2f93ab327.js"></script>
+    <!--generated script-->
+    <script src="/dist/min-be6688dfe3.js"></script>
 </body>
-
 </html>
