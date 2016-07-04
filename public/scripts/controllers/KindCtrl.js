@@ -3,5 +3,7 @@ angular.module('uniquers.controllers').controller('KindCtrl', [
     '$rootScope',
     function ($scope,$rootScope) {
         $scope.username = 'Kind';
+        $rootScope.splash = false;
+        $rootScope.navshow = 'nav-show';
     }
 ]);

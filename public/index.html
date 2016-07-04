@@ -8,12 +8,12 @@
     <meta name="description" content="">
     <base href="/">
     <title>Uniquers</title>
-    <link rel="stylesheet" href="/dist/min-71a663e05c.css">
+    <link rel="stylesheet" href="/dist/min-e5a06edb17.css">
 </head>
 
 <body ng-app="uniquers.app">
     <!--top nav bar-->
-    <div ng-if="!splash" class="top-nav container-fluid">
+    <div ng-if="!splash" class="top-nav container-fluid {{navshow}}">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <ul class="nav navbar-nav">
                 <li>
@@ -44,7 +44,7 @@
     </div>
 
     <!--bottom nav bar-->
-    <div ng-if="!splash" class="bottom-nav container-fluid">
+    <div ng-if="!splash" class="bottom-nav container-fluid  {{navshow}}">
         <nav class="navbar navbar-default navbar-fixed-bottom">
             <ul class="nav navbar-nav">
                 <li>
@@ -88,6 +88,6 @@
     </div>
 
     <!--generated script-->
-    <script src="/dist/min-be6688dfe3.js"></script>
+    <script src="/dist/min-da84d4881f.js"></script>
 </body>
 </html>

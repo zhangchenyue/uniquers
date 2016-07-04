@@ -3,5 +3,7 @@ angular.module('uniquers.controllers').controller('OlCtrl', [
     '$rootScope',
     function ($scope,$rootScope) {
         $scope.username = 'Ol';
+        $rootScope.splash = false;
+        $rootScope.navshow = 'nav-show';
     }
 ]);

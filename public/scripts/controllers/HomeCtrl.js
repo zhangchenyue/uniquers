@@ -5,6 +5,7 @@ angular.module('uniquers.controllers').controller('HomeCtrl', [
     function ($scope, $rootScope, $timeout) {
         $scope.username = 'Home';
         $rootScope.splash = false;
+        $rootScope.navshow = 'nav-show';
         $timeout(function () {
             $('.carousel').carousel({
                 interval: 2000

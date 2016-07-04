@@ -190,6 +190,8 @@ span.item-spec {
 .page-home-feature-content .works .work-item img{
     width: auto;
     height: 85%;
+    min-width: 105px;
+    background-image: url('/images/placeholder.jpg');
 }
 
 
@@ -230,6 +232,10 @@ span.item-spec {
     text-align: center;
 }
 
+.bottom-nav{
+ display: none; 
+}
+
 .bottom-nav .navbar-nav>li>a>span:first-child{
     font-size: 16px;
     position: relative;
@@ -242,7 +248,12 @@ span.item-spec {
 
 .top-nav{
  color: white;  
- padding: 0; 
+ padding: 0;
+ display: none; 
+}
+
+.nav-show{
+    display: block;
 }
 
 .top-nav span{
