@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node server",
-    "postinstall": "gulp min"
+    "postinstall": "gulp deploy"
   },
   "dependencies": {
     "angular": "^1.5.5",
@@ -26,7 +26,6 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
-    "gulp-plumber": "^1.0.0",
     "gulp-rev": "^7.1.0",
     "gulp-rev-collector": "^1.0.4",
     "gulp-uglify": "^1.5.3",
