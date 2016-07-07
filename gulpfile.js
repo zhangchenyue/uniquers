@@ -45,7 +45,7 @@ gulp.task('clean:minjs', function (cb) { rimraf(min['js'], cb); })
 
 gulp.task('clean:mincss', function (cb) { rimraf(min['css'], cb); });
 
-gulp.task('min:js', ['clean:minjs'], function () {
+gulp.task('min:js',  function () {
   gulp.src(srcJS, { base: '.' })
     .pipe(concat('min.js'))
     .pipe(uglify())
@@ -55,7 +55,7 @@ gulp.task('min:js', ['clean:minjs'], function () {
     .pipe(gulp.dest('rev/js'));
 });
 
-gulp.task('min:css', ['clean:mincss'], function () {
+gulp.task('min:css', function () {
   gulp.src(srcCSS, { base: '.' })
     .pipe(concat('min.css'))
     .pipe(cssmin())
@@ -87,7 +87,7 @@ gulp.task('rev', function () {
 
 //for developer use support livereload
 gulp.task('develop', function () {
-  livereload.listen();
+  // livereload.listen();
   nodemon({
     script: 'server',
     ext: 'js',
@@ -95,7 +95,7 @@ gulp.task('develop', function () {
   }).on('readable', function () {
     this.stdout.on('data', function (chunk) {
       if (/^Express server listening on port/.test(chunk)) {
-        livereload.changed(__dirname);
+        //livereload.changed(__dirname);
       }
     });
     this.stdout.pipe(process.stdout);
@@ -107,11 +107,15 @@ gulp.task('develop', function () {
 gulp.task('browser-sync', ['develop'], function () {
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
-    files: ['public/**/*.*'],
+    files: ['public/*.html'],
     browser: 'google chrome',
     notify: false,
     port: 5000
   });
+
+    gulp.watch(["public/scripts/**/*.js",], ['min:js']);
+    gulp.watch("public/styles/**/*.css", ['min:css']);
+    gulp.watch("public/dist/**/*.*", ['rev']);
 });
 
 
