@@ -18,11 +18,11 @@ var min = {
 
 //source files
 var srcJS = [
-  'public/scripts/lib/jquery.min.js',
-  'public/scripts/lib/bootstrap.min.js',
-  'public/scripts/lib/angular.min.js',
-  'public/scripts/lib/angular-route.min.js',
-  'public/scripts/lib/angular-animate.min.js',
+  'node_modules/jquery/dist/jquery.min.js',
+  'node_modules/bootstrap/dist/js/bootstrap.min.js',
+  'node_modules/angular/angular.min.js',
+  'node_modules/angular-route/angular-route.min.js',
+  'node_modules/angular-animate/angular-animate.min.js',
   'public/scripts/common/*.js',
   'public/scripts/modules/*.js',
   'public/scripts/controllers/*.js',
@@ -33,8 +33,8 @@ var srcJS = [
 ];
 
 var srcCSS = [
+  './node_modules/bootstrap/dist/css/bootstrap.min.css',
   './public/styles/animate.css',
-  './public/styles/bootstrap.min.css',
   './public/styles/fonts.css',
   './public/styles/style.css',
 ];
