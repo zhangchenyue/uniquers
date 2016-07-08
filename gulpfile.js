@@ -1,7 +1,6 @@
 //plugins
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
-  livereload = require('gulp-livereload'),
   rimraf = require('rimraf'),
   concat = require('gulp-concat'),
   cssmin = require('gulp-cssmin'),
@@ -9,6 +8,7 @@ var gulp = require('gulp'),
   rev = require('gulp-rev'),
   revCollector = require('gulp-rev-collector'),
   browserSync = require('browser-sync');
+
 
 //production files
 var min = {
@@ -40,31 +40,51 @@ var srcCSS = [
 ];
 
 /*--------------------Tasks-------------------*/
+gulp.task('debug', function () { process.env.ENV = 'debug' });
+
+gulp.task('release', function () { process.env.ENV = 'release' });
 
 gulp.task('clean:minjs', function (cb) { rimraf(min['js'], cb); })
 
 gulp.task('clean:mincss', function (cb) { rimraf(min['css'], cb); });
 
-gulp.task('min:js',  function () {
-  gulp.src(srcJS, { base: '.' })
-    .pipe(concat('min.js'))
-    .pipe(uglify())
-    .pipe(rev())
-    .pipe(gulp.dest('./public/dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('rev/js'));
+gulp.task('min:js', function () {
+  if (process.env.ENV === 'debug') {
+    gulp.src(srcJS, { base: '.' })
+      .pipe(concat('min.js'))
+      .pipe(rev())
+      .pipe(gulp.dest('./public/dist/'))
+      .pipe(rev.manifest())
+      .pipe(gulp.dest('rev/js'));
+  } else {
+    gulp.src(srcJS, { base: '.' })
+      .pipe(concat('min.js'))
+      .pipe(uglify())
+      .pipe(rev())
+      .pipe(gulp.dest('./public/dist/'))
+      .pipe(rev.manifest())
+      .pipe(gulp.dest('rev/js'));
+  }
 });
 
 gulp.task('min:css', function () {
-  gulp.src(srcCSS, { base: '.' })
-    .pipe(concat('min.css'))
-    .pipe(cssmin())
-    .pipe(rev()) 
-    .pipe(gulp.dest('./public/dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('rev/css'));
+  if (process.env.ENV === 'debug') {
+    gulp.src(srcCSS, { base: '.' })
+      .pipe(concat('min.css'))
+      .pipe(rev())
+      .pipe(gulp.dest('./public/dist/'))
+      .pipe(rev.manifest())
+      .pipe(gulp.dest('rev/css'));
+  } else {
+    gulp.src(srcCSS, { base: '.' })
+      .pipe(concat('min.css'))
+      .pipe(cssmin())
+      .pipe(rev())
+      .pipe(gulp.dest('./public/dist/'))
+      .pipe(rev.manifest())
+      .pipe(gulp.dest('rev/css'));
+  }
 });
-
 
 gulp.task('clean', [
   'clean:minjs',
@@ -85,50 +105,52 @@ gulp.task('rev', function () {
     .pipe(gulp.dest('./public/'));
 });
 
-//for developer use support livereload
-gulp.task('develop', function () {
-  // livereload.listen();
+//start local server by nodemon
+gulp.task('serve', function () {
   nodemon({
     script: 'server',
     ext: 'js',
     stdout: false
   }).on('readable', function () {
-    this.stdout.on('data', function (chunk) {
-      if (/^Express server listening on port/.test(chunk)) {
-        //livereload.changed(__dirname);
-      }
-    });
     this.stdout.pipe(process.stdout);
     this.stderr.pipe(process.stderr);
   });
 });
 
 //add browser refresh
-gulp.task('browser-sync', ['develop'], function () {
+gulp.task('browser-sync', ['serve'], function () {
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
-    files: ['public/*.html'],
     browser: 'google chrome',
     notify: false,
     port: 5000
   });
 
-    gulp.watch(["public/scripts/**/*.js",], ['min:js']);
-    gulp.watch("public/styles/**/*.css", ['min:css']);
-    gulp.watch("public/dist/**/*.*", ['rev']);
+  gulp.watch(["public/scripts/**/*.js",], ['min:js']);
+  gulp.watch("public/styles/**/*.css", ['min:css']);
+  gulp.watch("public/dist/**/*.*", ['rev']);
+  gulp.watch("public/*.html").on('change', browserSync.reload);
 });
 
-
+//for npm release
 gulp.task('deploy', [
   'clean',
   'min',
   'rev'
 ]);
 
+
 //final task
 gulp.task('default', [
+  'release',
   'clean',
   'min',
-  'rev',
+  'browser-sync'
+]);
+
+gulp.task('dev', [
+  'debug',
+  'clean',
+  'min',
   'browser-sync'
 ]);
