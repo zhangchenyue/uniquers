@@ -134,6 +134,7 @@ gulp.task('browser-sync', ['serve'], function () {
 
 //for npm release
 gulp.task('deploy', [
+  'release',
   'clean',
   'min',
   'rev'
