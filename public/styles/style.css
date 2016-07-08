@@ -47,6 +47,7 @@ html,body {
 
 .page-welcome-content p:nth-child(1) a {
     color: #FF1177;
+      color: green;
     font-family: Monoton;
 }
 .page-welcome-content p:nth-child(1) a:hover{

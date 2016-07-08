@@ -124,9 +124,3 @@ gulp.task('default', [
   'min',
   'browser-sync'
 ]);
-
-gulp.task('dev', [
-  'clean',
-  'min',
-  'browser-sync'
-]);
