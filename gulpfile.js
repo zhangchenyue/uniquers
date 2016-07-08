@@ -40,50 +40,28 @@ var srcCSS = [
 ];
 
 /*--------------------Tasks-------------------*/
-gulp.task('debug', function () { process.env.ENV = 'debug' });
-
-gulp.task('release', function () { process.env.ENV = 'release' });
-
 gulp.task('clean:minjs', function (cb) { rimraf(min['js'], cb); })
 
 gulp.task('clean:mincss', function (cb) { rimraf(min['css'], cb); });
 
 gulp.task('min:js', function () {
-  if (process.env.ENV === 'debug') {
-    gulp.src(srcJS, { base: '.' })
-      .pipe(concat('min.js'))
-      .pipe(rev())
-      .pipe(gulp.dest('./public/dist/'))
-      .pipe(rev.manifest())
-      .pipe(gulp.dest('rev/js'));
-  } else {
-    gulp.src(srcJS, { base: '.' })
-      .pipe(concat('min.js'))
-      .pipe(uglify())
-      .pipe(rev())
-      .pipe(gulp.dest('./public/dist/'))
-      .pipe(rev.manifest())
-      .pipe(gulp.dest('rev/js'));
-  }
+  gulp.src(srcJS, { base: '.' })
+    .pipe(concat('min.js'))
+    .pipe(uglify())
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist/'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('rev/js'));
 });
 
 gulp.task('min:css', function () {
-  if (process.env.ENV === 'debug') {
-    gulp.src(srcCSS, { base: '.' })
-      .pipe(concat('min.css'))
-      .pipe(rev())
-      .pipe(gulp.dest('./public/dist/'))
-      .pipe(rev.manifest())
-      .pipe(gulp.dest('rev/css'));
-  } else {
-    gulp.src(srcCSS, { base: '.' })
-      .pipe(concat('min.css'))
-      .pipe(cssmin())
-      .pipe(rev())
-      .pipe(gulp.dest('./public/dist/'))
-      .pipe(rev.manifest())
-      .pipe(gulp.dest('rev/css'));
-  }
+  gulp.src(srcCSS, { base: '.' })
+    .pipe(concat('min.css'))
+    .pipe(cssmin())
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist/'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('rev/css'));
 });
 
 gulp.task('clean', [
@@ -134,7 +112,6 @@ gulp.task('browser-sync', ['serve'], function () {
 
 //for npm release
 gulp.task('deploy', [
-  'release',
   'clean',
   'min',
   'rev'
@@ -143,14 +120,12 @@ gulp.task('deploy', [
 
 //final task
 gulp.task('default', [
-  'release',
   'clean',
   'min',
   'browser-sync'
 ]);
 
 gulp.task('dev', [
-  'debug',
   'clean',
   'min',
   'browser-sync'
