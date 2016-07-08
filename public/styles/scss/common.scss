@@ -1,0 +1,15 @@
+$fontStack: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $fontStack;
+}
+
+.container,
+.container-fluid,
+.row{
+    margin: 0;
+    padding: 0;
+}

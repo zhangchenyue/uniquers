@@ -8,7 +8,7 @@ var gulp = require('gulp'),
   rev = require('gulp-rev'),
   revCollector = require('gulp-rev-collector'),
   browserSync = require('browser-sync');
-
+var sass = require('gulp-sass');
 
 //production files
 var min = {
@@ -34,8 +34,6 @@ var srcJS = [
 
 var srcCSS = [
   './node_modules/bootstrap/dist/css/bootstrap.min.css',
-  './public/styles/animate.css',
-  './public/styles/fonts.css',
   './public/styles/style.css',
 ];
 
@@ -62,6 +60,13 @@ gulp.task('min:css', function () {
     .pipe(gulp.dest('./public/dist/'))
     .pipe(rev.manifest())
     .pipe(gulp.dest('rev/css'));
+});
+
+
+gulp.task('sass', function() {
+    gulp.src('./public/styles/scss/style.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./public/styles/'));
 });
 
 gulp.task('clean', [
@@ -113,6 +118,7 @@ gulp.task('browser-sync', ['serve'], function () {
 //for npm release
 gulp.task('deploy', [
   'clean',
+  'sass',
   'min',
   'rev'
 ]);
@@ -121,6 +127,7 @@ gulp.task('deploy', [
 //final task
 gulp.task('default', [
   'clean',
+  'sass',
   'min',
   'browser-sync'
 ]);

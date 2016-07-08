@@ -305,3 +305,31 @@
 @keyframes rotateOutNewspaper {
 	to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
 }
+
+
+
+.ngView{
+  overflow-x: hidden;
+}
+.ngView.ng-leave 	{ z-index:9999; }
+.ngView.ng-enter 	{ z-index:8888; }
+
+.ngView.ng-leave         {
+    -webkit-animation:scaleDown 0.5s both ease-in;
+	-moz-animation:scaleDown 0.5s both ease-in;
+	animation:scaleDown 0.5s both ease-in;  
+
+}
+.ngView.ng-enter 		{  
+    -webkit-animation:scaleUp 0.5s both ease-in;
+	-moz-animation:scaleUp 0.5s both ease-in;
+	animation:scaleUp 0.5s both ease-in;    
+}
+
+.header-placeholder{
+    height: 36px;    
+}
+
+.footer-placeholder{
+    height: 40px;    
+}
