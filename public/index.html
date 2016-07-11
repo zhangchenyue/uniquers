@@ -9,7 +9,7 @@
     <!--<meta property="qc:admins" content="640712621115523612525752314536654" />-->
     <base href="/">
     <title>Uniquers</title>
-    <link rel="stylesheet" href="/dist/min-64ca2bcd20.css">
+    <link rel="stylesheet" href="/dist/min-397fd42fc7.css">
 </head>
 
 <body ng-app="uniquers.app">
@@ -18,8 +18,11 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/home"><span class="brand">UNIQUERS</span></a>
-                </li>
+                    <a href="/home">
+                        <!--<span class="brand">UNIQUERS</span>-->
+                        <img class="brand" src="/images/logo-title.png" alt="UNIQUERS">
+                    </a>
+                </li> 
             </ul>
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -41,6 +44,7 @@
     <div class="container-fluid">
         <div class="header-placeholder"></div>
         <div class="ngView"></div>
+        <div ng-if="!splash" ng-include="'/views/footer.html'"></div>
         <div class="footer-placeholder"></div>
     </div>
 
@@ -90,6 +94,6 @@
 
     <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101332510" data-redirecturi="http://uniquers.azurewebsites.net/home" charset="utf-8"></script>-->
     <!--generated script-->
-    <script src="/dist/min-0a821ea4d3.js"></script>
+    <script src="/dist/min-aabe66e7a2.js"></script>
 </body>
 </html>

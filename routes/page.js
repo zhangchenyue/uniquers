@@ -12,7 +12,8 @@ var pageRoutes = [
   '/about', 
   '/party',
   '/ol',
-  '/vacation'
+  '/vacation',
+  '/designer'
 ];
 
 pageRoutes.forEach(function (route) {

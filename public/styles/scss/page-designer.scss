@@ -1,0 +1,59 @@
+.designer-banner-img {
+  width: 100%; 
+}
+
+.designer-profile-img{
+  width: 100%;
+}
+
+.designer-introduction{
+  margin-top: 2em; 
+}
+
+#designer .jumbotron{
+  border-radius: 0;
+  background-color: #f9f9f9
+}
+
+#designer .jumbotron p{
+  font-size: .8em;
+}
+
+#designer small{
+  font-size: .6em;
+  color: #b5b5b5
+}
+
+.designer-introduction-info{
+  margin-top: 1em;
+}
+
+.designer-works{
+  margin-top: 0;
+}
+
+.designer-works label.btn.btn-sm.btn-default{
+  border-radius: 0;
+}
+.designer-works label.btn.btn-sm.btn-default.active {
+    background-color: #1a1a1a;
+    color: #c9c9c9;
+    border: 1px solid #1a1a1a;
+}
+
+.designer-works-item{
+  padding-left: 0; 
+  margin-top: 1em;
+  text-align: center;
+}
+
+.designer-works-item img{
+  width: 100%;
+}
+
+.designer-works-item .btn.btn-sm.btn-default.active {
+    background-color: #1a1a1a;
+    color: #c9c9c9;
+    border: 1px solid #1a1a1a;
+    border-radius: 0;
+}

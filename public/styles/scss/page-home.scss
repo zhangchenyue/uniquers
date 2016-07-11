@@ -156,12 +156,14 @@ span.item-spec {
 
 .top-nav span{
     font-size: 900;
-    line-height: 36px;
+    line-height: 50px;
     color: white;
 }
 
 .top-nav .navbar {
-    min-height: 36px; 
+    min-height: 50px; 
+    background-color: #1c1c1f;
+    opacity: .9;
 }
 
 .top-nav .dropdown{
