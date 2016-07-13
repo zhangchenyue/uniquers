@@ -28,6 +28,7 @@ node_modules
 node_modules/
 public/components
 .sass-cache
+_package
 
 # Optional npm cache directory
 .npm

@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   cssmin = require('gulp-cssmin'),
   uglify = require('gulp-uglify'),
   rev = require('gulp-rev'),
+  zip = require('gulp-zip'),
   revCollector = require('gulp-rev-collector'),
   browserSync = require('browser-sync');
 var sass = require('gulp-sass');
@@ -41,6 +42,8 @@ var srcCSS = [
 gulp.task('clean:minjs', function (cb) { rimraf(min['js'], cb); })
 
 gulp.task('clean:mincss', function (cb) { rimraf(min['css'], cb); });
+
+gulp.task('clean:package', function (cb) { rimraf('_package/Package.zip', cb); });
 
 gulp.task('min:js', function () {
   gulp.src(srcJS, { base: '.' })
@@ -86,6 +89,17 @@ gulp.task('rev', function () {
       replaceReved: true
     }))
     .pipe(gulp.dest('./public/'));
+});
+
+gulp.task('package', ['clean:package'],function () {
+  var files = [
+    './**',
+    '!./{node_modules,node_modules/**}',
+    '!./{.git,.git/**}',
+    '!./{._package,._package/**}'
+  ];
+  return gulp.src(files, { dot: true }).pipe(zip('Package.zip'))
+    .pipe(gulp.dest('./_package'));
 });
 
 //start local server by nodemon
