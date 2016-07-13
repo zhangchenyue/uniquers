@@ -94,7 +94,7 @@ gulp.task('rev', function () {
 gulp.task('package', ['clean:package'],function () {
   var files = [
     './**',
-    '!./{node_modules,node_modules/**}',
+    // '!./{node_modules,node_modules/**}',
     '!./{.git,.git/**}',
     '!./{._package,._package/**}'
   ];
