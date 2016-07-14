@@ -43,7 +43,7 @@ gulp.task('clean:minjs', function (cb) { rimraf(min['js'], cb); })
 
 gulp.task('clean:mincss', function (cb) { rimraf(min['css'], cb); });
 
-gulp.task('clean:package', function (cb) { rimraf('_package/Package.zip', cb); });
+gulp.task('clean:package', function (cb) { rimraf('_package', cb); });
 
 gulp.task('min:js', function () {
   gulp.src(srcJS, { base: '.' })
@@ -66,10 +66,10 @@ gulp.task('min:css', function () {
 });
 
 
-gulp.task('sass', function() {
-    gulp.src('./public/styles/scss/style.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./public/styles/'));
+gulp.task('sass', function () {
+  gulp.src('./public/styles/scss/style.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./public/styles/'));
 });
 
 gulp.task('clean', [
@@ -91,12 +91,19 @@ gulp.task('rev', function () {
     .pipe(gulp.dest('./public/'));
 });
 
-gulp.task('package', ['clean:package'],function () {
+gulp.task('package', ['clean:package'], function () {
   var files = [
     './**',
-    // '!./{node_modules,node_modules/**}',
+    '!./{rev,rev/**}',
     '!./{.git,.git/**}',
-    '!./{._package,._package/**}'
+    '!./{._package,._package/**}',
+    '!./{public/styles,public/styles/**}',
+    '!./{public/scripts,public/scripts/**}',
+    '!./{rev,rev/**}',
+    '!./gulpfile.js',
+    '!./.gitignore',
+    '!./README.md',
+    '!./LICENSE'
   ];
   return gulp.src(files, { dot: true }).pipe(zip('Package.zip'))
     .pipe(gulp.dest('./_package'));
@@ -107,6 +114,7 @@ gulp.task('serve', function () {
   nodemon({
     script: 'server',
     ext: 'js',
+    watch:['server.js','routes'],
     stdout: false
   }).on('readable', function () {
     this.stdout.pipe(process.stdout);
