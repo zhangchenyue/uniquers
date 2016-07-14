@@ -307,7 +307,7 @@ img.brand {
   padding: 0 10px; }
 
 .page-welcome-content p:nth-child(1) a {
-  color: #FF1177;
+  color: yellow;
   font-family: Monoton; }
 
 .page-welcome-content p:nth-child(1) a:hover {
