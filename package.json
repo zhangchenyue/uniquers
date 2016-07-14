@@ -19,6 +19,7 @@
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0"
   },
+   "engine": "node 6.2.0",
   "devDependencies": {
     "browser-sync": "^2.12.10",
     "gulp": "^3.9.0",
