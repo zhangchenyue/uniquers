@@ -1,21 +1,16 @@
 //plugins
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
-  rimraf = require('rimraf'),
+  clean = require('gulp-clean'),
   concat = require('gulp-concat'),
+  sass = require('gulp-sass'),
   cssmin = require('gulp-cssmin'),
   uglify = require('gulp-uglify'),
   rev = require('gulp-rev'),
   zip = require('gulp-zip'),
   revCollector = require('gulp-rev-collector'),
-  browserSync = require('browser-sync');
-var sass = require('gulp-sass');
-
-//production files
-var min = {
-  'js': './public/dist/min-*.js',
-  'css': './public/dist/min-*.css'
-};
+  browserSync = require('browser-sync'),
+  runSequence = require('run-sequence');
 
 //source files
 var srcJS = [
@@ -35,15 +30,19 @@ var srcJS = [
 
 var srcCSS = [
   './node_modules/bootstrap/dist/css/bootstrap.min.css',
-  './public/styles/style.css',
+  './public/styles/style.scss',
 ];
 
 /*--------------------Tasks-------------------*/
-gulp.task('clean:minjs', function (cb) { rimraf(min['js'], cb); })
+gulp.task('clean', function () {
+  return gulp.src(['rev', 'public/dist'], { read: false })
+    .pipe(clean());
+});
 
-gulp.task('clean:mincss', function (cb) { rimraf(min['css'], cb); });
-
-gulp.task('clean:package', function (cb) { rimraf('_package', cb); });
+gulp.task('clean:package', function () {
+  return gulp.src(['_package'], { read: false })
+    .pipe(clean());
+});
 
 gulp.task('min:js', function () {
   gulp.src(srcJS, { base: '.' })
@@ -57,6 +56,7 @@ gulp.task('min:js', function () {
 
 gulp.task('min:css', function () {
   gulp.src(srcCSS, { base: '.' })
+    .pipe(sass())
     .pipe(concat('min.css'))
     .pipe(cssmin())
     .pipe(rev())
@@ -65,22 +65,7 @@ gulp.task('min:css', function () {
     .pipe(gulp.dest('rev/css'));
 });
 
-
-gulp.task('sass', function () {
-  gulp.src('./public/styles/scss/style.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('./public/styles/'));
-});
-
-gulp.task('clean', [
-  'clean:minjs',
-  'clean:mincss'
-]);
-
-gulp.task('min', [
-  'min:js',
-  'min:css'
-]);
+gulp.task('min', ['min:js', 'min:css']);
 
 //support rewrite url in html
 gulp.task('rev', function () {
@@ -90,6 +75,7 @@ gulp.task('rev', function () {
     }))
     .pipe(gulp.dest('./public/'));
 });
+
 
 gulp.task('package', ['clean:package'], function () {
   var files = [
@@ -114,7 +100,7 @@ gulp.task('serve', function () {
   nodemon({
     script: 'server',
     ext: 'js',
-    watch:['server.js','routes'],
+    watch: ['server.js', 'routes'],
     stdout: false
   }).on('readable', function () {
     this.stdout.pipe(process.stdout);
@@ -138,18 +124,11 @@ gulp.task('browser-sync', ['serve'], function () {
 });
 
 //for npm release
-gulp.task('deploy', [
-  'clean',
-  'sass',
-  'min',
-  'rev'
-]);
-
+gulp.task('deploy', ['clean'], function () {
+  runSequence('min', 'rev');
+});
 
 //final task
-gulp.task('default', [
-  'clean',
-  'sass',
-  'min',
-  'browser-sync'
-]);
+gulp.task('default', ['clean'], function () {
+  runSequence('min', 'rev', 'browser-sync');
+});
