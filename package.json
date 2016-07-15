@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node server",
-    "postinstall": "gulp deploy"
+    "postinstall": "gulp deploy && gulp rev",
+    "dev": "gulp deploy && gulp rev && gulp browser-sync"
   },
   "dependencies": {
     "angular": "^1.5.5",

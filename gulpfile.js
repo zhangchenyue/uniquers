@@ -110,6 +110,10 @@ gulp.task('serve', function () {
 
 //add browser refresh
 gulp.task('browser-sync', ['serve'], function () {
+  gulp.watch("rev/**/*", ['rev']);
+  gulp.watch(["public/scripts/**/*.*",], ['min:js']);
+  gulp.watch("public/styles/**/*.*", ['min:css']);
+  gulp.watch("public/*.html").on('change', browserSync.reload);
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
     browser: 'google chrome',
@@ -117,18 +121,9 @@ gulp.task('browser-sync', ['serve'], function () {
     port: 5000
   });
 
-  gulp.watch(["public/scripts/**/*.js",], ['min:js']);
-  gulp.watch("public/styles/**/*.css", ['min:css']);
-  gulp.watch("public/dist/**/*.*", ['rev']);
-  gulp.watch("public/*.html").on('change', browserSync.reload);
 });
 
 //for npm release
 gulp.task('deploy', ['clean'], function () {
-  runSequence('min', 'rev');
-});
-
-//final task
-gulp.task('default', ['clean'], function () {
-  runSequence('min', 'rev', 'browser-sync');
+  runSequence(['min:css', 'min:js']);
 });
