@@ -25,7 +25,8 @@ build/Release
 
 # Dependency directory
 node_modules
-node_modules/
+public/rev
+public/dist
 .sass-cache
 _package
 
