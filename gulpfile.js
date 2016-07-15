@@ -65,6 +65,25 @@ gulp.task('min:css', function () {
     .pipe(gulp.dest('rev/css'));
 });
 
+gulp.task('cat:js', function () {
+  gulp.src(srcJS, { base: '.' })
+    .pipe(concat('min.js'))
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist/'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('rev/js'));
+});
+
+gulp.task('cat:css', function () {
+  gulp.src(srcCSS, { base: '.' })
+    .pipe(sass())
+    .pipe(concat('min.css'))
+    .pipe(rev())
+    .pipe(gulp.dest('./public/dist/'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('rev/css'));
+});
+
 gulp.task('min', ['min:js', 'min:css']);
 
 //support rewrite url in html
@@ -113,7 +132,7 @@ gulp.task('browser-sync', ['serve'], function () {
   gulp.watch("rev/**/*", ['rev']);
   gulp.watch(["public/scripts/**/*.*",], ['min:js']);
   gulp.watch("public/styles/**/*.*", ['min:css']);
-  gulp.watch("public/*.html").on('change', browserSync.reload);
+  gulp.watch("public/**/*.html").on('change', browserSync.reload);
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
     browser: 'google chrome',
@@ -126,4 +145,22 @@ gulp.task('browser-sync', ['serve'], function () {
 //for npm release
 gulp.task('deploy', ['clean'], function () {
   runSequence(['min:css', 'min:js']);
+});
+
+gulp.task('debug', ['clean'], function () {
+  runSequence(['cat:css', 'cat:js']);
+});
+
+gulp.task('browser-sync-debug', ['serve'], function () {
+  gulp.watch("rev/**/*", ['rev']);
+  gulp.watch(["public/scripts/**/*.*",], ['cat:js']);
+  gulp.watch("public/styles/**/*.*", ['cat:css']);
+  gulp.watch("public/**/*.html").on('change', browserSync.reload);
+  browserSync.init(null, {
+    proxy: 'http://localhost:3000',
+    browser: 'google chrome',
+    notify: false,
+    port: 5000
+  });
+
 });

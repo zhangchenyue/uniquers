@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server",
     "postinstall": "gulp deploy && gulp rev",
-    "dev": "gulp deploy && gulp rev && gulp browser-sync"
+    "prod": "gulp deploy && gulp rev && gulp browser-sync",
+    "debug": "gulp debug && gulp rev && gulp browser-sync-debug"
   },
   "dependencies": {
     "angular": "^1.5.5",
