@@ -1,7 +1,6 @@
 {
   "name": "uniquers",
   "version": "0.0.1",
-  "engines" : { "node" : "^6.2.0" },
   "private": true,
   "scripts": {
     "start": "node server",
