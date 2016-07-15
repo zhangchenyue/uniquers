@@ -42,6 +42,8 @@ angular.module('uniquers.app', [
         .when('/ol', { templateUrl: '/views/ol.html', controller: 'OlCtrl' })
         .when('/vacation', { templateUrl: '/views/vacation.html', controller: 'VacationCtrl' })
         .when('/designer', { templateUrl: '/views/designer.html', controller: 'DesignerCtrl' })
+        .when('/detail', { templateUrl: '/views/detail.html', controller: 'DetailCtrl' })
+        .when('/detail/:id', { templateUrl: '/views/detail.html', controller: 'DetailCtrl' })
         .otherwise({ redirectTo: '/' });
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');

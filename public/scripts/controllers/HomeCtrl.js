@@ -11,5 +11,6 @@ angular.module('uniquers.controllers').controller('HomeCtrl', [
                 interval: 2000
             })
         }, 0);
+        $scope.itemID = '1-1';
     }
 ]);
