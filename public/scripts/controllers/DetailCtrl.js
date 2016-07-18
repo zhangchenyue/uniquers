@@ -2,10 +2,10 @@ angular.module('uniquers.controllers').controller('DetailCtrl', [
     '$scope',
     '$rootScope',
     '$routeParams',
-    function ($scope,$rootScope, $routeParams) {
-        $scope.itemUrl = $routeParams.id ? '/images/' + $routeParams.id + '.jpg' : '/images/placeholder.jpg';
-        $rootScope.splash = false;
-        $rootScope.navshow = 'nav-show';
-        console.log($routeParams);
+    'itemService',
+    function ($scope, $rootScope, $routeParams,itemService) {
+        itemService.getItemById($routeParams.id, function (res) {
+            $scope.itemUrl = res[0].url;
+        })
     }
 ]);

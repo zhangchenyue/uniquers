@@ -2,7 +2,11 @@ angular.module('uniquers.controllers').controller('WelcomeCtrl', [
     '$scope',
     '$rootScope',
     function ($scope,$rootScope) {
-        $scope.username = 'Welcome sss';
-        $rootScope.splash = true;
+        $scope.content = {
+            text1:'Welcome',
+            text2:'to',
+            text3:'Uniquers'
+        };
+       
     }
 ]);

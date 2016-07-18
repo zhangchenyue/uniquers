@@ -47,4 +47,18 @@ angular.module('uniquers.app', [
         .otherwise({ redirectTo: '/' });
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
+}]).run(['$rootScope', '$location', function ($rootScope, $location) {
+    $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
+        var path = $location.path();
+        if (path !== '/') {
+            $rootScope.splash = false;
+            $rootScope.navshow = 'nav-show';
+        } else {
+            $rootScope.splash = true;
+        }
+    });
+
+    //  $rootScope.$on('$locationChangeSuccess', function(evt, current, previous) {
+    //    console.log($location.path());
+    // });
 }]);

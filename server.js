@@ -20,10 +20,13 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({
     extended: true
 }));
-server.use(cookieParser());
-server.use(express.static(path.join(__dirname, 'public')));
+
 server.use(require('./routes/api'));
 server.use(require('./routes/page'));
+
+server.use(cookieParser());
+server.use(express.static(path.join(__dirname, 'public')));
+
 
 /// catch 404 and forward to error handler
 server.use(function (req, res, next) {

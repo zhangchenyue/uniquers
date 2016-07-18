@@ -3,7 +3,6 @@ angular.module('uniquers.controllers').controller('AboutCtrl', [
     '$rootScope',
     function ($scope,$rootScope) {
         $scope.username = 'About';
-        $rootScope.splash = false;
-        $rootScope.navshow = 'nav-show';
+      
     }
 ]);

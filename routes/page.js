@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var pageRouter = express.Router();
 var path = require('path');
 /* GET home page. */
 var pageRoutes = [
@@ -19,9 +19,9 @@ var pageRoutes = [
 ];
 
 pageRoutes.forEach(function (route) {
-  router.get(route, function (req, res) {
+  pageRouter.get(route, function (req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 });
 
-module.exports = router;
+module.exports = pageRouter;
