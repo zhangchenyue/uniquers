@@ -9,91 +9,25 @@
     <!--<meta property="qc:admins" content="640712621115523612525752314536654" />-->
     <base href="/">
     <title>Uniquers</title>
-    <link rel="stylesheet" href="/dist/min-47bbbda0c1.css">
+    <link rel="stylesheet" href="/dist/min-8f665f6a02.css">
 </head>
 
 <body ng-app="uniquers.app">
     <!--top nav bar-->
-    <div data-ng-controller="TopCtrl" ng-if="!splash" class="top-nav container-fluid {{navshow}}">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="/home">
-                        <!--<span class="brand">UNIQUERS</span>-->
-                        <img class="brand" src="/images/logo-title.png" alt="UNIQUERS">
-                    </a>
-                </li> 
-            </ul>
-            <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span>其他</span>
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action1</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
 
+    <div ng-if="!splash" ng-include="'/views/nav-top.html'"></div>
     <!--view content-->
-    <div class="container-fluid">
-        <div class="header-placeholder"></div>
+    <div class="uq-view container-fluid">
         <div class="ngView"></div>
         <div ng-if="!splash" ng-include="'/views/footer.html'"></div>
-        <div class="footer-placeholder"></div>
     </div>
 
     <!--bottom nav bar-->
-    <div ng-if="!splash" class="bottom-nav container-fluid  {{navshow}}">
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="/">
-                        <img src="favicon.ico" alt="">
-                        <span>角色1</span>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="/home">
-                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                        <span>首页</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/match">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                        <span>搭配</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/kind">
-                        <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                        <span>分类</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="thenew">
-                        <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-                        <span>新款</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="about">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <span>我们</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <div ng-if="!splash" ng-include="'/views/nav-bottom.html'"></div>
 
     <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101332510" data-redirecturi="http://uniquers.azurewebsites.net/home" charset="utf-8"></script>-->
     <!--generated script-->
     <script src="/dist/min-ab92872a17.js"></script>
 </body>
+
 </html>
