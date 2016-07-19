@@ -1,4 +1,4 @@
-<div ng-if="!splash" class="bottom-nav container-fluid  {{navshow}}">
+<div data-ng-controller="BottomCtrl" ng-if="!splash" class="bottom-nav container-fluid  {{navshow}}">
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <ul class="nav navbar-nav">
             <li>
@@ -7,31 +7,31 @@
                     <span>角色1</span>
                 </a>
             </li>
-            <li class="active">
+            <li ng-class="{ active: isActive('/home')}">
                 <a href="/home">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                     <span>首页</span>
                 </a>
             </li>
-            <li>
+            <li  ng-class="{ active: isActive('/match')}">
                 <a href="/match">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                     <span>搭配</span>
                 </a>
             </li>
-            <li>
+            <li  ng-class="{ active: isActive('/kind')}">
                 <a href="/kind">
                     <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                     <span>分类</span>
                 </a>
             </li>
-            <li>
+            <li  ng-class="{ active: isActive('/thenew')}">
                 <a href="thenew">
                     <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
                     <span>新款</span>
                 </a>
             </li>
-            <li>
+            <li  ng-class="{ active: isActive('/about')}">
                 <a href="about">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                     <span>我们</span>
