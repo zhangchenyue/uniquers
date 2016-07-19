@@ -311,8 +311,16 @@
 .ngView{
   overflow-x: hidden;
 }
-.ngView.ng-leave 	{ z-index:9999;}
-.ngView.ng-enter 	{ z-index:8888;}
+.ngView.ng-leave 	{ 
+  z-index:9999;
+  }
+.ngView.ng-enter 	{ 
+  z-index:8888;
+  position: absolute;
+  top:50px;
+  left: 0;
+  right: 0;
+  }
 
 .ngView.ng-leave         {
     -webkit-animation:scaleDown 0.5s both ease-in;
