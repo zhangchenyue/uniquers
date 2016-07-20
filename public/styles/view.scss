@@ -7,23 +7,55 @@
 }
 .ngView.ng-leave 	{ 
   z-index:9999;
-  }
-.ngView.ng-enter 	{ 
-  z-index:8888;
   position: absolute;
-  top:50px;
+  top:0;
   left: 0;
   right: 0;
+  min-height: 100%;
+  background-color: white;
+  padding: 50px 0 40px 0;
+  }
+.ngView.ng-enter 	{ 
+  padding: 50px 0 40px 0;
+  z-index:8888;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  min-height: 100%;
+  background-color: white;
   }
 
 .ngView.ng-leave         {
-    -webkit-animation:scaleDown 0.5s both ease-in;
-	-moz-animation:scaleDown 0.5s both ease-in;
-	animation:scaleDown 0.5s both ease-in;  
+    -webkit-animation:fadeOut 0.5s both ease-in;
+	-moz-animation:fadeOut 0.5s both ease-in;
+	animation:fadeOut 0.5s both ease-in;  
 
 }
 .ngView.ng-enter 		{  
-    -webkit-animation:scaleUp 0.5s both ease-in;
-	-moz-animation:scaleUp 0.5s both ease-in;
-	animation:scaleUp 0.5s both ease-in;    
+    -webkit-animation:fadeIn 0.5s both ease-in;
+	-moz-animation:fadeIn 0.5s both ease-in;
+	animation:fadeIn 0.5s both ease-in;    
+}
+/* iphone (portrait and landscape) ----------- */
+@media only screen and (max-width : 767px) {
+
+  .ngView.ng-leave         {
+      -webkit-animation:keep 0.5s both ease-in;
+    -moz-animation:keep 0.5s both ease-in;
+    animation:keep 0.5s both ease-in;  
+
+  }
+  .ngView.ng-enter 		{  
+      z-index:18888;
+      -webkit-animation:slideInRight 0.5s both ease-in;
+    -moz-animation:slideInRight 0.5s both ease-in;
+    animation:slideInRight 0.5s both ease-in;    
+  }
+}
+.no-page-animate.ngView.ng-leave,
+.no-page-animate.ngView.ng-enter,{
+-webkit-animation:keep 0s both ease-in;
+    -moz-animation:keep 0s both ease-in;
+    animation:keep 0s both ease-in;  
 }

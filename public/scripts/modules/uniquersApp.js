@@ -49,6 +49,12 @@ angular.module('uniquers.app', [
     $locationProvider.hashPrefix('!');
 }]).run(['$rootScope', '$location', function ($rootScope, $location) {
     $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
+        if (!previous) {
+            $rootScope.noAnimateClass = 'no-page-animate';
+        }
+        else {
+            $rootScope.noAnimateClass = '';
+        }
         var path = $location.path();
         if (path !== '/') {
             $rootScope.splash = false;

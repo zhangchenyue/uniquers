@@ -132,6 +132,12 @@ span.item-spec {
 
 .bottom-nav{
  display: none; 
+
+}
+
+
+.bottom-nav .navbar {
+     z-index: 9999999;
 }
 
 .bottom-nav .navbar-nav>li>a>span:first-child{
@@ -148,6 +154,7 @@ span.item-spec {
  color: white;  
  padding: 0;
  display: none; 
+
 }
 
 .nav-show{
@@ -164,6 +171,7 @@ span.item-spec {
     min-height: 50px; 
     background-color: #1c1c1f;
     opacity: .9;
+     z-index: 9999999;
 }
 
 .top-nav .dropdown{
