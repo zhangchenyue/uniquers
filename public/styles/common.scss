@@ -13,3 +13,48 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
+
+.header-placeholder{
+    height: 50px;    
+}
+
+.footer-placeholder{
+    height: 40px;    
+}
+
+img.brand{
+  height: 30px;
+  margin-top: 10px;
+}
+.footer-page{
+  height: 100px;
+  padding-top: 10px;
+  background-color: #1c1c1f;
+  color: white;
+  padding: .8em 1em 0 1em;
+  margin-top: 3em;
+}
+
+.footer-page div{
+  padding: 0;
+}
+
+.footer-page-row-1{
+  font-size: 1em;
+}
+
+.footer-page-row-2{
+  font-size: .8em;
+  margin-top: .5em;
+  margin-left: 2em;
+}
+
+.footer-page-row-2 .brand-input{
+  color: yellow;
+}
+
+.brand-code{
+  height: 50px;
+}
