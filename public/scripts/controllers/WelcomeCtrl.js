@@ -13,7 +13,7 @@ angular.module('uniquers.controllers').controller('WelcomeCtrl', [
         $scope.gotoHome = function () {
             $timeout(function () {
                 $location.path('/home')
-            },2000);
+            },1000);
         }
     }
 ]);
