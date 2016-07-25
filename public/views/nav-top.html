@@ -1,25 +1,35 @@
 <div data-ng-controller="TopCtrl" ng-if="!splash" class="top-nav container-fluid {{navshow}}">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <ul class="nav navbar-nav">
-            <li>
+            <li class="no-padding">
+                <a href="/">
+                    <div><img class="brand" src="/images/logo-title.png" alt="UNIQUERS"></div>
+                </a>
+            </li>
+            <li ng-class="{ active: isActive('/home')}" class="no-padding">
                 <a href="/home">
-                    <!--<span class="brand">UNIQUERS</span>-->
-                    <img class="brand" src="/images/logo-title.png" alt="UNIQUERS">
+                    <div class="ch-text">主页</div>
+                    <div class="en-text"><img src="/images/hometext.png" alt="HOME"></div>
+                </a>
+            </li>
+            <li ng-class="{ active: isActive('/kind')}" class="no-padding">
+                <a href="/kind">
+                    <div  class="ch-text">派对风格</div>
+                    <div  class="en-text"><img src="/images/partytext.png" alt="PARTY"></div>
+                </a>
+            </li>
+            <li ng-class="{ active: isActive('/thenew')}" class="no-padding">
+                <a href="thenew">
+                    <div class="ch-text">OL风格</div>
+                    <div class="en-text"><img src="/images/oltext.png" alt="OL"></div>
+                </a>
+            </li>
+            <li ng-class="{ active: isActive('/about')}" class="no-padding">
+                <a href="about">
+                    <div class="ch-text">度假风格</div>
+                    <div class="en-text"><img src="/images/vacationtext.png" alt="VACATION"></div>
                 </a>
             </li>
         </ul>
-        <div class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>其他</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action1</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div>
     </nav>
 </div>

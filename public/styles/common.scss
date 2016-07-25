@@ -18,7 +18,7 @@ body {
 
 
 .header-placeholder{
-    height: 50px;    
+    height: 40px;    
 }
 
 .footer-placeholder{
@@ -26,8 +26,9 @@ body {
 }
 
 img.brand{
-  height: 30px;
-  margin-top: 10px;
+  height: 20px;
+  position: relative;
+  top:-8px;
 }
 .footer-page{
   height: 100px;
@@ -57,5 +58,9 @@ img.brand{
 }
 
 .brand-code{
-  height: 50px;
+  height: 40px;
+}
+
+.no-padding{
+  padding: 0;
 }

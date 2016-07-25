@@ -163,17 +163,31 @@ span.item-spec {
 
 .top-nav span{
     font-size: 900;
-    line-height: 50px;
+    line-height: 40px;
     color: white;
 }
 
 .top-nav .navbar {
-    min-height: 50px; 
+    min-height: 40px; 
     background-color: #1c1c1f;
     opacity: .9;
      z-index: 9999999;
+     padding: 0;
 }
 
+.top-nav .navbar ul{
+    width: 100%;
+}
+
+.top-nav li{
+    //width: .6%;
+    text-align:center;
+}
+
+.top-nav .ch-text{
+    position: relative;
+    top: 4px;
+}
 .top-nav .dropdown{
     position: absolute;
     right: 1em;

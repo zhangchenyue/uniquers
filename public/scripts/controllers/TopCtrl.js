@@ -8,5 +8,9 @@ angular.module('uniquers.controllers').controller('TopCtrl', [
             var path = $location.path();
             $rootScope.$broadcast(path);
         });
+
+         $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
     }
 ]);

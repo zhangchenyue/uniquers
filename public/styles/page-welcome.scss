@@ -5,7 +5,7 @@
  left: 0;
  bottom: 0;
  right: 0;
-  background-color: #222222;
+  background-color: #000000;
 }
 
 .page-welcome-content{
@@ -61,3 +61,38 @@
   animation: neon3 1.5s ease-in-out infinite alternate; 
 }
 
+
+.face-base,
+.face-left,
+.face-right{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width: 50%;
+}
+
+.face-base,
+.face-left>img,
+.face-right>img{
+    width: 100%;
+}
+.face-left{
+
+        opacity: 1;
+        left: 0;
+}
+.face-right{
+
+    right: 0;
+    opacity: 1;
+}
+
+.face-left:hover{
+    opacity: 0;
+    transition: all 1s 
+}
+
+.face-right:hover{
+    opacity: 0;
+    transition: all 1s 
+}

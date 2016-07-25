@@ -55,6 +55,7 @@ angular.module('uniquers.app', [
         else {
             $rootScope.noAnimateClass = '';
         }
+
         var path = $location.path();
         if (path !== '/') {
             $rootScope.splash = false;
