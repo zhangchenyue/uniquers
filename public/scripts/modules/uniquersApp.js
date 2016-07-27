@@ -7,22 +7,6 @@ angular.module('uniquers.controllers', [
     'uniquers.filters'
 ]);
 
-
-
-angular.module('uniquers.app', ['ngRoute']).run('$rootScope', function ($rootScope) {
-    // publish current transition direction on rootScope
-    $rootScope.direction = 'ltr';
-    // listen change start events
-    $rootScope.$on('$routeChangeStart', function (event, next, current) {
-        $rootScope.direction = 'rtl';
-        // console.log(arguments);
-        if (current && next && (current.depth > next.depth)) {
-            $rootScope.direction = 'ltr';
-        }
-    });
-});
-
-
 angular.module('uniquers.app', [
     'uniquers.controllers',
     'uniquers.services',
@@ -48,6 +32,17 @@ angular.module('uniquers.app', [
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
 }]).run(['$rootScope', '$location', function ($rootScope, $location) {
+    // publish current transition direction on rootScope
+    $rootScope.direction = 'ltr';
+    // listen change start events
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+        $rootScope.direction = 'rtl';
+        // console.log(arguments);
+        if (current && next && (current.depth > next.depth)) {
+            $rootScope.direction = 'ltr';
+        }
+    });
+
     $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
         if (!previous) {
             $rootScope.noAnimateClass = 'no-page-animate';
@@ -55,16 +50,5 @@ angular.module('uniquers.app', [
         else {
             $rootScope.noAnimateClass = '';
         }
-
-        var path = $location.path();
-        if (path !== '/') {
-            $rootScope.splash = false;
-        } else {
-            $rootScope.splash = true;
-        }
     });
-
-    //  $rootScope.$on('$locationChangeSuccess', function(evt, current, previous) {
-    //    console.log($location.path());
-    // });
 }]);

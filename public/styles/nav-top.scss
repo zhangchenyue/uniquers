@@ -5,15 +5,15 @@
 
 .top-nav span{
     font-size: 900;
-    line-height: 40px;
+    line-height: $navbarHeight;
     color: white;
 }
 
 .top-nav .navbar {
-    min-height: 40px; 
+    min-height: $navbarHeight; 
     background-color: #1c1c1f;
     opacity: .9;
-    z-index: 9999999;
+    z-index: 1000;
     padding: 0;
 }
 
