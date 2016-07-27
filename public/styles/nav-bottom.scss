@@ -2,6 +2,16 @@
      z-index: 1000;
 }
 
+.bottom-nav  li{
+    width: 16.5%;
+    overflow: hidden;
+}
+
+.bottom-nav .nav.navbar-nav{
+    width: 100%;
+}
+
+
 .bottom-nav .navbar-nav>li>a>span:first-child{
     font-size: 16px;
     position: relative;
