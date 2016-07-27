@@ -115,18 +115,19 @@ span.item-spec {
 
 .navbar-nav {
     margin: 0;
-    display: inline-block;
 }
+
 .navbar {
     margin: 0;
-    padding: 0 15px;
-    min-height: $navbarHeight; 
+    padding: 0;
+    min-height: $navbarHeight;
+    height: $navbarHeight; 
     border-radius: 0;
     opacity: .8;
 }
 
 .navbar-nav>li>a {
-    padding:0 10px;
+    padding:0 5px;
     text-align: center;
 }
 

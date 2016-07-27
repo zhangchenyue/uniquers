@@ -6,7 +6,7 @@
   overflow-x: hidden;
 }
 .ngView.ng-leave 	{ 
-  z-index:9999;
+  z-index:1600;
   position: absolute;
   top:0;
   left: 0;
@@ -17,7 +17,7 @@
   }
 .ngView.ng-enter 	{ 
   padding: $navbarHeight 0;
-  z-index:8888;
+  z-index:1500;
   position: absolute;
   top:0;
   left: 0;
@@ -41,13 +41,14 @@
 @media only screen and (max-width : 767px) {
 
   .ngView.ng-leave         {
+    z-index:1500;
       -webkit-animation:keep 0.5s both ease-in;
     -moz-animation:keep 0.5s both ease-in;
     animation:keep 0.5s both ease-in;  
 
   }
   .ngView.ng-enter 		{  
-      z-index:18888;
+      z-index:1600;
       -webkit-animation:slideInRight 0.5s both ease-in;
     -moz-animation:slideInRight 0.5s both ease-in;
     animation:slideInRight 0.5s both ease-in;    
