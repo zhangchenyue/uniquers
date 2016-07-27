@@ -7,6 +7,10 @@
     overflow: hidden;
 }
 
+.bottom-nav  li.active{
+   background: #e7e7e7;
+}
+
 .bottom-nav .nav.navbar-nav{
     width: 100%;
 }

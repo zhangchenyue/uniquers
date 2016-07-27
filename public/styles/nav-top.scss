@@ -7,6 +7,10 @@
     overflow: hidden;
 }
 
+.nav-top li.active{
+    background-color: #080808;
+}
+
 .nav-top .nav.navbar-nav{
     width: 100%;
 }
@@ -21,6 +25,7 @@
 .nav-top .cn-text{
     display: block;
     font-size: .8em;
+    white-space: nowrap;
 }
 
 .nav-top .en-text{
@@ -28,4 +33,39 @@
     font-size: .8em;
     transform:scale(0.6);
     position: relative;
+    white-space: nowrap;
+    letter-spacing: -1px;
+}
+
+.nav-top .img-profile{
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    height: 30px;
+    transform: translate(0,-50%);
+}
+
+.nav-top .user-menu {
+    position: absolute;
+    top: $navbarHeight;
+    right: 0;
+    background-color: #222;
+    color: white;
+    font-size: .8em;
+    transform: translateX(100%);
+}
+
+.nav-top .user-menu>div {
+    padding: 5px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.nav-top .user-menu.user-menu-show{
+    transform: translateX(0);
+    transition: transform ease-in .5s;
+}
+
+.nav-top .user-menu.user-menu-hide{
+    transform: translateX(100%);
+    transition: transform ease-out .5s;
 }
