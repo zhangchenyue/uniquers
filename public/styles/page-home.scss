@@ -111,6 +111,9 @@ span.item-spec {
 
 .nav>li, .nav>li>a {
     display: inline-block;
+    text-align: center;
+    position: static;
+    line-height: 18px;
 }
 
 .navbar-nav {
@@ -122,12 +125,13 @@ span.item-spec {
     padding: 0;
     min-height: $navbarHeight;
     height: $navbarHeight; 
+    line-height: 36px;
     border-radius: 0;
     opacity: .8;
 }
 
 .navbar-nav>li>a {
-    padding:0 5px;
+    padding:0;
     text-align: center;
 }
 
