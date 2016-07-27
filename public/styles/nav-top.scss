@@ -1,0 +1,53 @@
+.top-nav{
+    color: white;  
+    padding: 0;
+}
+
+.top-nav span{
+    font-size: 900;
+    line-height: 40px;
+    color: white;
+}
+
+.top-nav .navbar {
+    min-height: 40px; 
+    background-color: #1c1c1f;
+    opacity: .9;
+    z-index: 9999999;
+    padding: 0;
+}
+
+.top-nav .navbar ul{
+    width: 100%;
+}
+
+.top-nav li{
+    //width: .6%;
+    text-align:center;
+}
+
+.top-nav .ch-text{
+    position: relative;
+    top: 4px;
+}
+
+.top-nav .dropdown{
+    position: absolute;
+    right: 1em;
+    top: 0;
+}
+
+.top-nav .dropdown-menu{
+    left: auto;
+    right: 0;
+}
+
+.top-nav a{
+    text-decoration: none;
+}
+
+.top-nav img.brand{
+    height: 20px;
+    position: relative;
+    top:-8px;
+}

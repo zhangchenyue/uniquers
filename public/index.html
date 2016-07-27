@@ -11,31 +11,28 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Uniquers">
     <meta name="description" content="">
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="./images/icon-114.jpg" />
-    <!--<meta property="qc:admins" content="640712621115523612525752314536654" />-->
+     <!--<meta property="qc:admins" content="640712621115523612525752314536654" />-->
     <base href="/">
     <title>Uniquers</title>
-    <link rel="stylesheet" href="/dist/min-bc7c97e73d.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./images/icon-114.jpg" />
+    <link rel="stylesheet" href="/dist/min-9ded98f7a4.css">
 </head>
 
 <body ng-app="uniquers.app">
     <!--top nav bar-->
-<div  ng-if="!splash" ng-include="'/views/nav-top.html'"></div>
-    
-    <!--view content-->
-    <div class="uq-view container-fluid">
-        <div class="ngView {{noAnimateClass}}"></div>
+    <header ng-if="!splash" ng-include="'/views/nav-top.html'"></header>
 
+    <!--view content-->
+    <div class="uq-view">
+        <div class="ngView {{noAnimateClass}}"></div>
     </div>
 
     <!--bottom nav bar-->
-  
-
-<div ng-if="!splash" ng-include="'/views/nav-bottom.html'"></div>
+    <footer ng-if="!splash" ng-include="'/views/nav-bottom.html'"></footer>
     <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101332510" data-redirecturi="http://uniquers.azurewebsites.net/home" charset="utf-8"></script>-->
     <!--generated script-->
-    <script src="/dist/min-5bec223e01.js"></script>
+    <script src="/dist/min-15a182ecb4.js"></script>
 </body>
 
 </html>

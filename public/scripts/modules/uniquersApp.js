@@ -59,7 +59,6 @@ angular.module('uniquers.app', [
         var path = $location.path();
         if (path !== '/') {
             $rootScope.splash = false;
-            $rootScope.navshow = 'nav-show';
         } else {
             $rootScope.splash = true;
         }

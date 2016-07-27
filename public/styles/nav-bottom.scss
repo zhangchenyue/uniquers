@@ -1,0 +1,14 @@
+.bottom-nav .navbar {
+     z-index: 1000;
+}
+
+.bottom-nav .navbar-nav>li>a>span:first-child{
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+}
+
+.bottom-nav .navbar-nav>li>a>span:last-child {
+    display: block;
+}
+

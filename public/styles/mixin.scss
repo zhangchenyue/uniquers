@@ -1,0 +1,52 @@
+
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin box-sizing ($sizing) {
+    @include css3-prefix('box-sizing', $sizing);
+}
+
+@mixin box-shadow ($shadow) {
+    @include css3-prefix('box-shadow', $shadow);
+}
+
+
+@mixin transform($transforms) {
+    @include css3-prefix('transform', $transforms);
+}
+
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-origin ($origin) {
+    @include css3-prefix('transform-origin', $origin);
+}
+
+@mixin transition($properties...) {
+    @if length($properties) >= 1 {
+        @include css3-prefix('transition', $properties);
+    }
+
+    @else {
+        @include css3-prefix('transition', "all 0.4s ease-in-out 0s");
+    }
+}
