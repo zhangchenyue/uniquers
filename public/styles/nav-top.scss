@@ -17,15 +17,17 @@
 
 .nav-top .brand{
     position: absolute;
-    height: 15px;
-    top: .7em;
-    left: .25em;
+    height: 12px;
+    top: .9em;
+    left: .5em;
 }
 
 .nav-top .cn-text{
     display: block;
     font-size: .8em;
     white-space: nowrap;
+    position: relative;
+    top:2px;
 }
 
 .nav-top .en-text{
@@ -35,6 +37,7 @@
     position: relative;
     white-space: nowrap;
     letter-spacing: -1px;
+    top:-2px;
 }
 
 .nav-top .img-profile{
