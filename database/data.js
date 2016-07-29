@@ -253,6 +253,26 @@ var db = [
         id: 51,
         type: 'f3',
         url: '/images/f3-08.jpg'
+    },
+    {
+        id: 52,
+        type: 'u4',
+        url: '/images/u4-01.jpg'
+    },
+    {
+        id: 53,
+        type: 'u4',
+        url: '/images/u4-03.jpg'
+    },
+    {
+        id: 54,
+        type: 'u4',
+        url: '/images/u4-05.jpg'
+    },
+    {
+        id: 55,
+        type: 'u4',
+        url: '/images/u4-07.jpg'
     }
 ];
 

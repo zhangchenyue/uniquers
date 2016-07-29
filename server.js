@@ -28,7 +28,7 @@ server.use(cookieParser());
 server.use(express.static(path.join(__dirname, 'public')));
 
 
-/// catch 404 and forward to error handler
+/// catch 404 and forward to error handlersad
 server.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
