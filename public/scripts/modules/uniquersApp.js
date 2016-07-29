@@ -44,6 +44,7 @@ angular.module('uniquers.app', [
     });
 
     $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
+        document.getElementsByTagName('body')[0].scrollTop = 0;
         if (!previous) {
             $rootScope.noAnimateClass = 'no-page-animate';
         }
