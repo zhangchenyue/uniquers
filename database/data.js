@@ -69,7 +69,7 @@ var db = [
         type: 'ol',
         url: '/images/2-5.jpg'
     },
-     {
+    {
         id: 15,
         type: 'vacation',
         url: '/images/3-1.jpg'
@@ -109,6 +109,151 @@ var db = [
         type: 'designer',
         url: '/images/dwork-03.jpg'
     },
+    {
+        id: 23,
+        type: 'u1',
+        url: '/images/u1-01.jpg'
+    },
+    {
+        id: 24,
+        type: 'u1',
+        url: '/images/u1-02.jpg'
+    },
+    {
+        id: 25,
+        type: 'u1',
+        url: '/images/u1-03.jpg'
+    },
+    {
+        id: 26,
+        type: 'u1',
+        url: '/images/u1-04.jpg'
+    },
+    {
+        id: 27,
+        type: 'u1',
+        url: '/images/u1-05.jpg'
+    },
+    {
+        id: 28,
+        type: 'u2',
+        url: '/images/u2-01.jpg'
+    },
+    {
+        id: 29,
+        type: 'u2',
+        url: '/images/u2-02.jpg'
+    },
+    {
+        id: 30,
+        type: 'u2',
+        url: '/images/u2-03.jpg'
+    },
+    {
+        id: 31,
+        type: 'u2',
+        url: '/images/u2-04.jpg'
+    },
+    {
+        id: 32,
+        type: 'u3',
+        url: '/images/u3-01.jpg'
+    },
+    {
+        id: 33,
+        type: 'u3',
+        url: '/images/u3-02.jpg'
+    },
+    {
+        id: 34,
+        type: 'u3',
+        url: '/images/u3-03.jpg'
+    },
+    {
+        id: 35,
+        type: 'u3',
+        url: '/images/u3-04.jpg'
+    },
+    {
+        id: 36,
+        type: 'f1',
+        url: '/images/f1-01.jpg'
+    },
+    {
+        id: 37,
+        type: 'f1',
+        url: '/images/f1-02.jpg'
+    },
+    {
+        id: 38,
+        type: 'f1',
+        url: '/images/f1-03.jpg'
+    },
+    {
+        id: 39,
+        type: 'f1',
+        url: '/images/f1-04.jpg'
+    },
+    {
+        id: 40,
+        type: 'f2',
+        url: '/images/f2-01.jpg'
+    },
+    {
+        id: 41,
+        type: 'f2',
+        url: '/images/f2-02.jpg'
+    },
+    {
+        id: 42,
+        type: 'f2',
+        url: '/images/f2-03.jpg'
+    },
+    {
+        id: 43,
+        type: 'f2',
+        url: '/images/f2-04.jpg'
+    },
+     {
+        id: 44,
+        type: 'f3',
+        url: '/images/f3-01.jpg'
+    },
+    {
+        id: 45,
+        type: 'f3',
+        url: '/images/f3-02.jpg'
+    },
+    {
+        id: 46,
+        type: 'f3',
+        url: '/images/f3-03.jpg'
+    },
+    {
+        id: 47,
+        type: 'f3',
+        url: '/images/f3-04.jpg'
+    },
+     {
+        id: 48,
+        type: 'f3',
+        url: '/images/f3-05.jpg'
+    },
+    {
+        id: 49,
+        type: 'f3',
+        url: '/images/f3-06.jpg'
+    },
+    {
+        id: 50,
+        type: 'f3',
+        url: '/images/f3-07.jpg'
+    },
+    {
+        id: 51,
+        type: 'f3',
+        url: '/images/f3-08.jpg'
+    }
 ];
 
 module.exports = db;
