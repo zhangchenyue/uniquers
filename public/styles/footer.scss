@@ -1,26 +1,30 @@
 .footer-page{
-  height: 100px;
-  padding-top: 10px;
-  background-color: #1c1c1f;
-  color: white;
-  padding: .8em 1em 0 1em;
-  margin-top: 3em;
+    height: 100px;
+    margin-top: 3em;
+    padding: .8em 1em 0 1em;
+    background-color: #1c1c1f;
+    color: white;
 }
 
 .footer-page div{
-  padding: 0;
+    padding: 0;
 }
 
 .footer-page-row-1{
-  font-size: 1em;
+    font-size: 1em;
 }
 
 .footer-page-row-2{
-  font-size: .8em;
-  margin-top: .5em;
-  margin-left: 2em;
+    font-size: .8em;
+    margin-top: .5em;
+    margin-left: 2em;
 }
 
 .footer-page-row-2 .brand-input{
-  color: yellow;
+    color: yellow;
 }
+
+.brand-code{
+    height: $navbarHeight;
+}
+

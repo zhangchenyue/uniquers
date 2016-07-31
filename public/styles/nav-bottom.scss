@@ -1,25 +1,20 @@
-.bottom-nav .navbar {
-     z-index: 1000;
-}
-
 .bottom-nav  li{
     width: 16.5%;
     overflow: hidden;
 }
 
 .bottom-nav  li.active{
-   background: #e7e7e7;
+    background: #e7e7e7;
 }
 
 .bottom-nav .nav.navbar-nav{
     width: 100%;
 }
 
-
 .bottom-nav .navbar-nav>li>a>span:first-child{
-    font-size: 16px;
     position: relative;
     top: 5px;
+    font-size: 1em;
 }
 
 .bottom-nav .navbar-nav>li>a>span:last-child {

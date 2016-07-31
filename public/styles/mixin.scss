@@ -50,3 +50,7 @@
         @include css3-prefix('transition', "all 0.4s ease-in-out 0s");
     }
 }
+
+@mixin animation($properties...) {
+     @include css3-prefix('animation', $properties);
+}

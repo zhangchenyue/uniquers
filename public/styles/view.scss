@@ -5,58 +5,43 @@
 .ngView{
   overflow-x: hidden;
 }
+
+.ngView.ng-leave,
+.ngView.ng-enter{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  padding:  $navbarHeight 0;
+  min-height: 100%;
+  background-color: white;
+}
+
 .ngView.ng-leave 	{ 
   z-index:1600;
-  position: absolute;
-  top:0;
-  left: 0;
-  right: 0;
-  min-height: 100%;
-  background-color: white;
-  padding:  $navbarHeight 0;
-  }
-.ngView.ng-enter 	{ 
-  padding: $navbarHeight 0;
-  z-index:1500;
-  position: absolute;
-  top:0;
-  left: 0;
-  right: 0;
-  min-height: 100%;
-  background-color: white;
-  }
-
-.ngView.ng-leave         {
-    -webkit-animation:fadeOut 0.5s both ease-in;
-	-moz-animation:fadeOut 0.5s both ease-in;
-	animation:fadeOut 0.5s both ease-in;  
-
+  @include animation('fadeOut 0.5s both ease-in');
 }
-.ngView.ng-enter 		{  
-    -webkit-animation:fadeIn 0.5s both ease-in;
-	-moz-animation:fadeIn 0.5s both ease-in;
-	animation:fadeIn 0.5s both ease-in;    
+
+.ngView.ng-enter 	{
+  z-index:1500; 
+  @include animation('fadeIn 0.5s both ease-in');
 }
+
+.no-page-animate.ngView.ng-leave,
+.no-page-animate.ngView.ng-enter,{
+  @include animation('keep 0s both ease-in');
+}
+
 /* iphone (portrait and landscape) ----------- */
 @media only screen and (max-width : 767px) {
 
   .ngView.ng-leave         {
     z-index:1500;
-      -webkit-animation:keep 0.5s both ease-in;
-    -moz-animation:keep 0.5s both ease-in;
-    animation:keep 0.5s both ease-in;  
+    @include animation('keep 0.5s both ease-in');
+  }
 
-  }
   .ngView.ng-enter 		{  
-      z-index:1600;
-      -webkit-animation:slideInRight 0.5s both ease-in;
-    -moz-animation:slideInRight 0.5s both ease-in;
-    animation:slideInRight 0.5s both ease-in;    
+    z-index:1600;
+    @include animation('slideInRight 0.5s both ease-in');
   }
-}
-.no-page-animate.ngView.ng-leave,
-.no-page-animate.ngView.ng-enter,{
--webkit-animation:keep 0s both ease-in;
-    -moz-animation:keep 0s both ease-in;
-    animation:keep 0s both ease-in;  
 }

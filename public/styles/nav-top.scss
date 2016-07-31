@@ -17,27 +17,27 @@
 
 .nav-top .brand{
     position: absolute;
-    height: 12px;
     top: .9em;
     left: .5em;
+    height: .8em;
 }
 
 .nav-top .cn-text{
+    position: relative;
+    top:2px;
     display: block;
     font-size: .8em;
     white-space: nowrap;
-    position: relative;
-    top:2px;
 }
 
 .nav-top .en-text{
+    position: relative;
+    top:-2px;
     display: block;
     font-size: .8em;
-    transform:scale(0.6);
-    position: relative;
     white-space: nowrap;
     letter-spacing: -1px;
-    top:-2px;
+    @include scale(0.6);
 }
 
 .nav-top .img-profile{
@@ -45,7 +45,7 @@
     top: 50%;
     right: .5em;
     height: 30px;
-    transform: translate(0,-50%);
+    @include translate(0,-50%);
 }
 
 .nav-top .user-menu {
@@ -55,7 +55,7 @@
     background-color: #222;
     color: white;
     font-size: .8em;
-    transform: translateX(100%);
+    @include translate(100%, 0);
 }
 
 .nav-top .user-menu>div {
@@ -64,11 +64,11 @@
 }
 
 .nav-top .user-menu.user-menu-show{
-    transform: translateX(0);
-    transition: transform ease-in .5s;
+    @include translate(0, 0);
+    @include transition('transform ease-in .5s');
 }
 
 .nav-top .user-menu.user-menu-hide{
-    transform: translateX(100%);
-    transition: transform ease-out .5s;
+    @include translate(100%, 0);
+    @include transition('transform ease-in .5s');
 }
