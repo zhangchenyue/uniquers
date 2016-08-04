@@ -17,6 +17,7 @@ angular.module('uniquers.app', [
 ]).config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', { templateUrl: '/views/welcome.html', controller: 'WelcomeCtrl' })
+        .when('/login', { templateUrl: '/views/login.html', controller: 'LoginCtrl' })
         .when('/home', { templateUrl: '/views/home.html', controller: 'HomeCtrl' })
         .when('/match', { templateUrl: '/views/match.html', controller: 'MatchCtrl' })
         .when('/kind', { templateUrl: '/views/kind.html', controller: 'KindCtrl' })

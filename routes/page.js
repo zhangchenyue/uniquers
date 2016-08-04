@@ -4,6 +4,7 @@ var path = require('path');
 /* GET home page. */
 var pageRoutes = [
   '/',
+  '/login',
   '/home',
   '/welcome',
   '/match',
