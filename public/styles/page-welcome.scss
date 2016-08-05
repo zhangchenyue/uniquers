@@ -1,21 +1,20 @@
-
-#page-welcome{
- position: absolute; 
- top:0;
- left: 0;
- bottom: 0;
- right: 0;
-  background-color: #000000;
-  z-index: 2000;
+#page-welcome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000;
+    z-index: 2000;
 }
 
-.page-welcome-content{
-  position: absolute;
-  top:50%;
-  left:50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.page-welcome-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .page-welcome-content a {
@@ -33,13 +32,14 @@
 }
 
 .page-welcome-content p:nth-child(1) a {
-    color: green;//test   dsadasd
+    color: green; //test   dsadasd
     font-family: Monoton;
 }
-.page-welcome-content p:nth-child(1) a:hover{
-  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-  animation: neon1 1.5s ease-in-out infinite alternate; 
+
+.page-welcome-content p:nth-child(1) a:hover {
+    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+    animation: neon1 1.5s ease-in-out infinite alternate;
 }
 
 .page-welcome-content p:nth-child(2) a {
@@ -47,53 +47,52 @@
     font-family: Pacifico;
 }
 
-.page-welcome-content p:nth-child(2) a:hover{
-  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate;
+.page-welcome-content p:nth-child(2) a:hover {
+    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
 }
 
 .page-welcome-content p:nth-child(3) a {
     font-size: 3.2em;
     color: #228DFF;
     font-family: Iceland;
-     -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-  animation: neon3 1.5s ease-in-out infinite alternate; 
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
 }
-
 
 .face-base,
 .face-left,
-.face-right{
+.face-right {
     position: absolute;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     width: 50%;
 }
 
 .face-base,
 .face-left>img,
-.face-right>img{
+.face-right>img {
     width: 100%;
 }
-.face-left{
 
-        opacity: 1;
-        left: 0;
+.face-left {
+    opacity: 1;
+    left: 0;
 }
-.face-right{
 
+.face-right {
     right: 0;
     opacity: 1;
 }
 
-.face-left:hover{
+.face-left:hover {
     opacity: 0;
-    transition: all 1s 
+    transition: all 1s
 }
 
-.face-right:hover{
+.face-right:hover {
     opacity: 0;
-    transition: all 1s 
+    transition: all 1s
 }

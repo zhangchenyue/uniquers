@@ -1,38 +1,38 @@
-.nav-top .navbar{
+.nav-top .navbar {
     padding: .2em .4em;
 }
 
-.nav-top li{
+.nav-top li {
     width: 16.5%;
     overflow: hidden;
 }
 
-.nav-top li.active{
+.nav-top li.active {
     background-color: #080808;
 }
 
-.nav-top .nav.navbar-nav{
+.nav-top .nav.navbar-nav {
     width: 100%;
 }
 
-.nav-top .brand{
+.nav-top .brand {
     position: absolute;
     top: .9em;
     left: .5em;
     height: .8em;
 }
 
-.nav-top .cn-text{
+.nav-top .cn-text {
     position: relative;
-    top:2px;
+    top: 2px;
     display: block;
     font-size: .8em;
     white-space: nowrap;
 }
 
-.nav-top .en-text{
+.nav-top .en-text {
     position: relative;
-    top:-2px;
+    top: -2px;
     display: block;
     font-size: .8em;
     white-space: nowrap;
@@ -40,12 +40,12 @@
     @include scale(0.6);
 }
 
-.nav-top .img-profile{
+.nav-top .img-profile {
     position: absolute;
     top: 50%;
     right: .5em;
     height: 30px;
-    @include translate(0,-50%);
+    @include translate(0, -50%);
 }
 
 .nav-top .user-menu {
@@ -63,12 +63,12 @@
     border-bottom: 1px solid gray;
 }
 
-.nav-top .user-menu.user-menu-show{
+.nav-top .user-menu.user-menu-show {
     @include translate(0, 0);
     @include transition('transform ease-in .5s');
 }
 
-.nav-top .user-menu.user-menu-hide{
+.nav-top .user-menu.user-menu-hide {
     @include translate(100%, 0);
     @include transition('transform ease-in .5s');
 }
