@@ -25,6 +25,8 @@
         btnId: "qqLoginBtn"
     }, function(reqData, opts) { //登录成功
         //根据返回数据，更换按钮显示状态方法
+        console.log(reqData.nickname);
+        console.log(reqData.figureurl);
         var dom = document.getElementsByClassName('brand')[0],
             _logoutTemplate = [
                 //头像
