@@ -1,7 +1,7 @@
 var express = require('express');
 var apiRouter = express.Router();
 var db = require('../database/data');
-var passport = require('passport')
+var passportAuth = require('./passport-auth')
 var util = require('util')
 var crypto = require('crypto')
 
@@ -46,7 +46,7 @@ apiRouter.get('/api/auth/qq', function(req, res, next) {
     req.session.authState = crypto.createHash('sha1')
         .update(-(new Date()) + '')
         .digest('hex');
-    passport.authenticate('qq', {
+    passportAuth.authenticate('qq', {
         state: req.session.authState
     })(req, res, next);
 });
@@ -56,7 +56,7 @@ apiRouter.get('/api/auth/qq', function(req, res, next) {
 // 决定是否继续本次授权
 apiRouter.get('/api/auth/qq/callback', function(req, res, next) {
     if (req.session && req.session.authState && req.session.authState === req.query.state) {
-        passport
+        passportAuth
             .authenticate('qq', {
                 failureRedirect: '/'
             })(req, res, next);

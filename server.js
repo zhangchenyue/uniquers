@@ -8,34 +8,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var passport = require('passport');
-var TqqStrategy = require('passport-tqq/').Strategy;
-
-var QQ_APP_ID = '101332510'
-var QQ_APP_KEY = 'c138d5bc7f7d806a649bf4400715b698';
-passport.serializeUser(function (user, done) {
-    done(null, user);
-});
-
-passport.deserializeUser(function (obj, done) {
-    done(null, obj);
-});
-
-passport.use(new TqqStrategy({
-    clientID: QQ_APP_ID,
-    clientSecret: QQ_APP_KEY,
-    callbackURL: 'http://uniquers.azurewebsites.net/auth/qq/callback'
-},
-    function (accessToken, refreshToken, profile, done) {
-        // asynchronous verification, for effect...
-        process.nextTick(function () {
-            console.log('accessToken', accessToken);
-            console.log('refreshToken', refreshToken);
-            console.log('profile', profile);
-            return done(null, profile);
-        });
-    }
-));
+var passportAuth = require('./routes/passport-auth')
 
 var server = express();
 var env = process.env.NODE_ENV || 'development';
@@ -49,8 +22,8 @@ server.use(bodyParser.urlencoded({
     extended: true
 }));
 
-server.use(passport.initialize());
-server.use(passport.session());
+server.use(passportAuth.initialize());
+server.use(passportAuth.session());
 server.use(require('./routes/api'));
 server.use(require('./routes/page'));
 
