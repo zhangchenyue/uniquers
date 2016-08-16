@@ -22,7 +22,7 @@ passportAuth.use(new TqqStrategy({
             console.log('accessToken', accessToken);
             console.log('refreshToken', refreshToken);
             console.log('profile', profile);
-            return done(null, profile);
+            return done(null, {'accessToken': accessToken,'refreshToken': refreshToken,'profile': profile});
         });
     }
 ));
