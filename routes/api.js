@@ -56,7 +56,7 @@ apiRouter.get('/api/auth/qq', function(req, res, next) {
 // 决定是否继续本次授权
 apiRouter.get('/api/auth/qq/callback', function(req, res, next) {
     res.end(
-        'req: ' + req + '  res:  ' + res
+        'req: ' + JSON.stringify(req) + '  res:  ' + JSON.stringify(res)
     )
     // if (req.session && req.session.authState && req.session.authState === req.query.state) {
     //     passportAuth
