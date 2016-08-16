@@ -14,7 +14,7 @@ passportAuth.deserializeUser(function (obj, done) {
 passportAuth.use(new TqqStrategy({
     clientID: QQ_APP_ID,
     clientSecret: QQ_APP_KEY,
-    callbackURL: 'http://uniquers.azurewebsites.net/auth/qq/callback'
+    callbackURL: 'http://uniquers.azurewebsites.net/api/auth/qq/callback'
 },
     function (accessToken, refreshToken, profile, done) {
         // asynchronous verification, for effect...

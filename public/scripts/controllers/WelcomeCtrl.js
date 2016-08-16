@@ -3,7 +3,8 @@ angular.module('uniquers.controllers').controller('WelcomeCtrl', [
     '$rootScope',
     '$timeout',
     '$location',
-    function ($scope,$rootScope,$timeout,$location) {
+    'ajaxProxy',
+    function ($scope,$rootScope,$timeout,$location, ajaxProxy) {
         $scope.content = {
             text1:'Welcome',
             text2:'to',
@@ -14,6 +15,10 @@ angular.module('uniquers.controllers').controller('WelcomeCtrl', [
             $timeout(function () {
                 $location.path('/home')
             },1000);
+        }
+
+        $scope.gotoLogin = function () {
+            window.location = window.location.protocol + '//' + window.location.host + "/api/auth/qq";
         }
     }
 ]);
