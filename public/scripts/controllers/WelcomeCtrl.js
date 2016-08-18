@@ -16,9 +16,5 @@ angular.module('uniquers.controllers').controller('WelcomeCtrl', [
                 $location.path('/home')
             },1000);
         }
-
-        $scope.gotoLogin = function () {
-            window.location = window.location.protocol + '//' + window.location.host + "/api/auth/qq";
-        }
     }
 ]);

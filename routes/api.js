@@ -32,10 +32,13 @@ apiRouter.get('/api/items/:type', function (req, res) {
 
 apiRouter.get('/api/item/:id', function (req, res) {
     var id = req.params.id;
-    console.log(id);
     res.json(db.filter(function (item) {
         return item.id == id;
     }));
+})
+
+apiRouter.get('/api/auth/qq/user', function (req, res) {
+    res.json(req.session.user || {});
 })
 
 // GET /auth/qq

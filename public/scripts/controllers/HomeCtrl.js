@@ -3,7 +3,8 @@ angular.module('uniquers.controllers').controller('HomeCtrl', [
     '$rootScope',
     '$timeout',
     'itemService',
-    function ($scope, $rootScope, $timeout, itemService) {
+    'userService',
+    function ($scope, $rootScope, $timeout, itemService, userService) {
 
         $timeout(function () {
             $('.carousel').carousel({
@@ -32,6 +33,10 @@ angular.module('uniquers.controllers').controller('HomeCtrl', [
 
             itemService.getItemsByType('vacation', function (res) {
                 $scope.vacationItems = res;
+            })
+
+            userService.getQQUserInfo(function (res) {
+                console.log(res);
             })
         })
     }
