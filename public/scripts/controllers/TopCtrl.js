@@ -3,7 +3,7 @@ angular.module('uniquers.controllers').controller('TopCtrl', [
     '$rootScope',
     '$location',
     function ($scope, $rootScope, $location) {
-        $rootScope.profileImgSrc = '/images/profile.png'
+        $rootScope.profileImgSrc = $rootScope.profileImgSrc || '/images/profile.png'
         $scope.username = 'Top';
         $scope.userMenuShow = '';
         $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
