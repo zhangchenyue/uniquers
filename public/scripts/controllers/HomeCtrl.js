@@ -34,10 +34,13 @@ angular.module('uniquers.controllers').controller('HomeCtrl', [
             itemService.getItemsByType('vacation', function (res) {
                 $scope.vacationItems = res;
             })
+        })
 
-            userService.getQQUserInfo('',function (res) {
-                console.log(res);
-            })
+        userService.getQQUserInfo('', function (res) {
+            console.log(res);
+              if(res.profile){
+                  $rootScope.profileImgSrc = res.profile._json.figureurl_qq_1;
+              }
         })
     }
 ]);
