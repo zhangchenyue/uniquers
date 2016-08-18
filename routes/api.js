@@ -55,13 +55,13 @@ apiRouter.get('/api/auth/qq', function (req, res, next) {
 // 通过比较认证返回的`state`状态值与服务器端`session`中的`state`状态值
 // 决定是否继续本次授权
 apiRouter.get('/api/auth/qq/callback', function (req, res, next) {
-   // if (req.session && req.session.authState && req.session.authState === req.query.state) {
+    if (req.session && req.session.authState && req.session.authState === req.query.state) {
         passportAuth.authenticate('qq', { failureRedirect: '/about' })(req, res, next);
-   // } else {
-   //     return next(new Error('Auth State Mismatch'));
-   // }
+    } else {
+        return next(new Error('Auth State Mismatch'));
+    }
 }, function (req, res) {
-    res.redirect('/');
+    res.redirect('/home?id=' + req.user.profile.id);
 });
 
 module.exports = apiRouter;

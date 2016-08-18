@@ -8,7 +8,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var passportAuth = require('./routes/passport-auth')
+var session = require('express-session');
+var passportAuth = require('./routes/passport-auth');
 
 var server = express();
 var env = process.env.NODE_ENV || 'development';
@@ -21,7 +22,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({
     extended: true
 }));
-
+server.use(session({ secret: 'imooc' }));
 server.use(passportAuth.initialize());
 server.use(passportAuth.session());
 server.use(require('./routes/api'));
