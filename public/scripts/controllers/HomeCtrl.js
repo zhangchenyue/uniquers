@@ -35,7 +35,7 @@ angular.module('uniquers.controllers').controller('HomeCtrl', [
                 $scope.vacationItems = res;
             })
 
-            userService.getQQUserInfo(function (res) {
+            userService.getQQUserInfo('',function (res) {
                 console.log(res);
             })
         })
