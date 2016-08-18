@@ -38,7 +38,7 @@ apiRouter.get('/api/item/:id', function (req, res) {
 })
 
 apiRouter.get('/api/auth/qq/user', function (req, res) {
-    res.json(req.session.user || {});
+    res.json(req.session);
 })
 
 // GET /auth/qq
