@@ -22,7 +22,11 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({
     extended: true
 }));
-server.use(session({ secret: 'imooc' }));
+server.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: 'imooc'
+}));
 server.use(passportAuth.initialize());
 server.use(passportAuth.session());
 server.use(require('./routes/api'));
