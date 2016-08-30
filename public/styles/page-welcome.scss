@@ -8,58 +8,13 @@
     z-index: 2000;
 }
 
-.page-welcome-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.page-welcome-images {
+    max-width: 1200px;
     width: 100%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.page-welcome-content a {
-    text-decoration: none;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.page-welcome-content p {
-    text-align: center;
-    font-size: 2em;
-    margin: 10px 0 0 0;
-    padding: 0 10px;
-}
-
-.page-welcome-content p:nth-child(1) a {
-    color: green; //test   dsadasd
-    font-family: Monoton;
-}
-
-.page-welcome-content p:nth-child(1) a:hover {
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate;
-}
-
-.page-welcome-content p:nth-child(2) a {
-    color: #FFDD1B;
-    font-family: Pacifico;
-}
-
-.page-welcome-content p:nth-child(2) a:hover {
-    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-    animation: neon2 1.5s ease-in-out infinite alternate;
-}
-
-.page-welcome-content p:nth-child(3) a {
-    font-size: 3.2em;
-    color: #228DFF;
-    font-family: Iceland;
-    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-    animation: neon3 1.5s ease-in-out infinite alternate;
+    position: relative;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .face-base,
