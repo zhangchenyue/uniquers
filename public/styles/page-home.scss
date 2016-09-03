@@ -27,13 +27,6 @@
     margin: 3em 0;
 }
 
-.page-home-u1-title-text,
-.page-home-u2-title-text,
-.page-home-u3-title-text,
-.page-home-u4-title-text,
-.page-home-f1-title-text {
-    height: 2.5em;
-}
 
 .page-home-u1-title-splitter {
     width: 100%;
@@ -152,4 +145,18 @@
 .navbar-nav>li>a {
     padding: 0;
     text-align: center;
+}
+
+
+
+/* iphone (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 767px) {
+    .page-home-u1-title-text,
+    .page-home-u2-title-text,
+    .page-home-u3-title-text,
+    .page-home-u4-title-text,
+    .page-home-f1-title-text {
+        height: 2.5em;
+    }
 }
