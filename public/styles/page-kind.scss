@@ -1,0 +1,60 @@
+.kind-banner,
+.jacket-line-img,
+.trousers-line-img{
+    width:100%;
+}
+
+.jacket,
+.trousers{
+    margin-top: 5em;
+}
+
+.jacket-content{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.jacket-title,
+.jacket-more,
+.trousers-title,
+.trousers-more{
+    text-align: center;
+}
+
+.jacket-content  .col-xs-4,
+.trousers-content  .col-xs-4{
+    text-align: center;
+}
+
+.jacket-content  .col-xs-4 >img,
+.trousers-content  .col-xs-4 >img{
+    max-width: 100%;
+}
+
+.price-row{
+    margin: 2em 0 3em 0;
+}
+
+.jacket-more-content .row,
+.trousers-more-content .row, {
+    text-align: center;
+    margin-top: .8em;
+}
+
+.jacket-more-content .row > img,
+.trousers-more-content .row > img{
+    max-width: 18%;
+    width: 100%;
+}
+
+
+/* iphone (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 767px) {
+    .jacket-more-img,
+    .jacket-title-img,
+    .trousers-more-img,
+    .trousers-title-img {
+        max-height: 2em;
+    }
+}
