@@ -12,6 +12,15 @@ body {
     max-width: 1200px;
 }
 
+.row-no-padding {
+  margin-left: 0;
+  margin-right: 0;
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 #about,
 #designer,
 #detail,
