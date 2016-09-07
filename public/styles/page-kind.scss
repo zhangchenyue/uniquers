@@ -9,9 +9,12 @@
     margin-top: 5em;
 }
 
-.jacket-content{
-    padding-left: 2em;
-    padding-right: 2em;
+.jacket-content,
+.jacket-more-content,
+.trousers-content,
+.trousers-more-content{
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .jacket-title,
@@ -26,13 +29,22 @@
     text-align: center;
 }
 
-.jacket-content  .col-xs-4 >img,
-.trousers-content  .col-xs-4 >img{
+.jacket-content  .col-xs-4 img,
+.trousers-content  .col-xs-4 img{
     max-width: 100%;
 }
 
-.price-row{
-    margin: 2em 0 3em 0;
+#kind .price-row{
+    margin: .5em;
+}
+
+#kind .price-row > img{
+    max-width: 80%;
+}
+
+.jacket-more,
+.trousers-more{
+    margin-top: 2em;
 }
 
 .jacket-more-content .row,
@@ -41,13 +53,16 @@
     margin-top: .8em;
 }
 
-.jacket-more-content .row > img,
-.trousers-more-content .row > img{
+.jacket-more-content .row  img,
+.trousers-more-content .row  img{
     max-width: 18%;
     width: 100%;
 }
 
-
+.jacket-more-content-img,
+.trousers-more-content-img{
+    margin-bottom: .5em;
+}
 /* iphone (portrait and landscape) ----------- */
 
 @media only screen and (max-width: 767px) {

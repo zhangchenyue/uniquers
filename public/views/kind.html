@@ -12,52 +12,12 @@
         <div class="row jacket-content">
             <div class="col-xs-12">
                 <div class="row">
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-01.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-02.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-03.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row price-row">
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-04.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-05.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-06.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row price-row">
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
+                    <div class="col-xs-4" ng-repeat="jacketItem in jacketItems">
+                        <a ng-href="/detail/{{jacketItem.id}}"><img ng-src="{{jacketItem.url}}" alt=""></a>
+                        <div class="price-row"><img src="./images/jacket-price.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
-
-
         </div>
 
         <div class="jacket-more">
@@ -68,18 +28,9 @@
         <div class="row jacket-more-content">
             <div class="col-xs-12">
                 <div class="row">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-01.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-01.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-02.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-03.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-04.jpg" alt="">
-                </div>
-                <div class="row">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-01.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-01.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-02.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-03.jpg" alt="">
-                    <img class="jacket-more-content-img" src="./images/jacket-more-04.jpg" alt="">
+                    <a ng-repeat="jacketMoreItem in jacketMoreItems" ng-href="/detail/{{jacketMoreItem.id}}">
+                        <img class="jacket-more-content-img" ng-src="{{jacketMoreItem.url}}" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -94,47 +45,9 @@
         <div class="row trousers-content">
             <div class="col-xs-12">
                 <div class="row">
-                    <div class="col-xs-4">
-                        <img src="./images/trousers-01.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/trousers-02.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/trousers-03.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row price-row">
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <img src="./images/trousers-04.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/trousers-05.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/trousers-06.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row price-row">
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
-                    </div>
-                    <div class="col-xs-4">
-                        <img src="./images/jacket-price.jpg" alt="">
+                    <div class="col-xs-4" ng-repeat="trousersItem in trousersItems">
+                        <a ng-href="/detail/{{trousersItem.id}}"><img ng-src="{{trousersItem.url}}" alt=""></a>
+                        <div class="price-row"><img src="./images/jacket-price.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -149,18 +62,9 @@
         <div class="row trousers-more-content">
             <div class="col-xs-12">
                 <div class="row">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-01.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-02.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-03.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-04.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-05.jpg" alt="">
-                </div>
-                <div class="row">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-06.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-07.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-08.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-09.jpg" alt="">
-                    <img class="trousers-more-content-img" src="./images/trousers-more-10.jpg" alt="">
+                    <a ng-repeat="trousersMoreItem in trousersMoreItems" ng-href="/detail/{{trousersMoreItem.id}}">
+                        <img class="trousers-more-content-img" ng-src="{{trousersMoreItem.url}}" alt="">
+                    </a>
                 </div>
             </div>
         </div>

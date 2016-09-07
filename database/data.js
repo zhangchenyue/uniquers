@@ -307,4 +307,253 @@ db.push({
     url: '/images/u4-07.jpg',
     text: ''
 });
+
+db.push({
+    id: db.length,
+    type: 'jacket',
+    url: '/images/jacket-01.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacket',
+    url: '/images/jacket-02.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacket',
+    url: '/images/jacket-03.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacket',
+    url: '/images/jacket-04.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacket',
+    url: '/images/jacket-05.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacket',
+    url: '/images/jacket-06.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-01.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-01.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-02.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-03.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-04.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-01.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-01.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-02.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-03.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'jacketmore',
+    url: '/images/jacket-more-04.jpg',
+    text: ''
+});
+
+db.push({
+    id: db.length,
+    type: 'trousers',
+    url: '/images/trousers-01.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'trousers',
+    url: '/images/trousers-02.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'trousers',
+    url: '/images/trousers-03.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'trousers',
+    url: '/images/trousers-04.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'trousers',
+    url: '/images/trousers-05.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'trousers',
+    url: '/images/trousers-06.jpg',
+    text: ''
+});
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-01.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-02.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-03.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-04.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-05.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-06.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-07.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-08.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-09.jpg',
+    text: ''
+});
+
+
+
+db.push({
+    id: db.length,
+    type: 'trousersmore',
+    url: '/images/trousers-more-10.jpg',
+    text: ''
+});
 module.exports = db;
