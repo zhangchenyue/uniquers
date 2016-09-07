@@ -17,16 +17,16 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row page-home-u1">
+        <div class="row row-no-padding page-home-u1">
             <div class="col-xs-12">
-                <div class="row page-home-u1-title">
+                <div class="row row-no-padding page-home-u1-title">
                     <div class="col-xs-12 ">
                         <img class="page-home-u1-title-text" src="/images/u1-title.png" alt="ui-title">
                         <img class="page-home-u1-title-splitter" src="/images/u1-splitter.png" alt="ui-title">
                     </div>
                 </div>
-                <div class="row page-home-u1-content">
-                    <div class="col-xs-8">
+                <div class="row row-no-padding page-home-u1-content">
+                    <div class="col-xs-12 col-sm-8">
                         <div class="row">
                             <div class="col-xs-6">
                                 <a ng-href="/detail/{{u1Items[0].id}}"><img ng-src="{{u1Items[0].url}}" alt=""></a>
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="hidden-xs col-sm-4">
                         <a ng-href="/detail/{{u1Items[4].id}}"><img ng-src="{{u1Items[4].url}}" alt=""></a>
                     </div>
                 </div>
@@ -64,19 +64,37 @@
                         <img class="page-home-u1-title-splitter" src="/images/f1-splitter.png" alt="ui-title">
                     </div>
                 </div>
-                <div class="row page-home-f1-content">
-                    <div class="col-xs-3">
+                <div class="row row-no-padding page-home-f1-content">
+                    <div class="col-xs-5 col-sm-3">
                         <a href="/designer"><img class="page-home-f1-item" src="/images/f1-profile.jpg" alt=""></a>
                     </div>
-                    <div class="col-xs-9">
-                        <div class="row">
-                            <div class="col-xs-3" ng-repeat="f1Item in f1Items">
-                                <a ng-href="/detail/{{f1Item.id}}"><img class="page-home-f1-item" ng-src="{{f1Item.url}}" alt=""></a>
+                    <div class="col-xs-7 col-sm-9">
+                        <div class="row row-padding-3">
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f1Items[0].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[0].url}}" alt=""></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f1Items[1].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[1].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f1Items[2].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[2].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f1Items[3].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[3].url}}" alt=""></a>
                             </div>
                         </div>
-                        <div class="row" style="margin-top:6px;">
-                            <div class="col-xs-3" ng-repeat="f1Item in f1Items">
-                                <a ng-href="/detail/{{f1Item.id}}"><img class="page-home-f1-item" ng-src="{{f1Item.url}}" alt=""></a>
+                        <div class="row row-padding-3" style="margin-top:2em;">
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f1Items[0].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[0].url}}" alt=""></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f1Items[1].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[1].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f1Items[2].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[2].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f1Items[3].id}}"><img class="page-home-f1-item" ng-src="{{f1Items[3].url}}" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -94,15 +112,15 @@
                         <img class="page-home-u1-title-splitter" src="/images/u1-splitter.png" alt="ui-title">
                     </div>
                 </div>
-                <div class="row page-home-u2-content">
-                    <div class="col-xs-4">
+                <div class="row row-no-padding page-home-u2-content">
+                    <div class="col-xs-6 col-sm-4">
                         <a ng-href="/detail/{{u2Items[0].id}}"><img class="page-home-u2-item" ng-src="{{u2Items[0].url}}" alt=""></a>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-6 col-sm-4">
                         <a ng-href="/detail/{{u2Items[1].id}}"><img class="page-home-u2-item" ng-src="{{u2Items[1].url}}" alt=""></a>
                         <a ng-href="/detail/{{u2Items[2].id}}"><img class="page-home-u2-item" ng-src="{{u2Items[2].url}}" alt=""></a>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="hidden-xs col-sm-4">
                         <a ng-href="/detail/{{u2Items[3].id}}"><img class="page-home-u2-item" ng-src="{{u2Items[3].url}}" alt=""></a>
                         <a ng-href="/detail/{{u2Items[4].id}}"><img class="page-home-u2-item" ng-src="{{u2Items[4].url}}" alt=""></a>
                     </div>
@@ -121,19 +139,37 @@
                         <img class="page-home-u1-title-splitter" src="/images/f1-splitter.png" alt="ui-title">
                     </div>
                 </div>
-                <div class="row page-home-f1-content">
-                    <div class="col-xs-3">
+                <div class="row row-no-padding page-home-f1-content">
+                    <div class="col-xs-5 col-sm-3">
                         <a href="/designer"><img class="page-home-f1-item" src="/images/f2-profile.jpg" alt=""></a>
                     </div>
-                    <div class="col-xs-9">
-                        <div class="row">
-                            <div class="col-xs-3" ng-repeat="f2Item in f2Items">
-                                <a ng-href="/detail/{{f2Item.id}}"><img class="page-home-f1-item" ng-src="{{f2Item.url}}" alt=""></a>
+                    <div class="col-xs-7 col-sm-9">
+                        <div class="row row-padding-3">
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f2Items[0].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[0].url}}" alt=""></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f2Items[1].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[1].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f2Items[2].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[2].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f2Items[3].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[3].url}}" alt=""></a>
                             </div>
                         </div>
-                        <div class="row" style="margin-top:6px;">
-                            <div class="col-xs-3" ng-repeat="f2Item in f2Items">
-                                <a ng-href="/detail/{{f2Item.id}}"><img class="page-home-f1-item" ng-src="{{f2Item.url}}" alt=""></a>
+                        <div class="row row-padding-3" style="margin-top:2em;">
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f2Items[0].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[0].url}}" alt=""></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f2Items[1].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[1].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f2Items[2].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[2].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f2Items[3].id}}"><img class="page-home-f1-item" ng-src="{{f2Items[3].url}}" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -151,18 +187,18 @@
                         <img class="page-home-u1-title-splitter" src="/images/u1-splitter.png" alt="ui-title">
                     </div>
                 </div>
-                <div class="row page-home-u4-content">
-                    <div class="col-xs-4">
+                <div class="row row-no-padding page-home-u4-content">
+                    <div class="col-xs-6 col-sm-4">
                         <a ng-href="/detail/{{u4Items[0].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[0].url}}" alt=""></a>
                         <a ng-href="/detail/{{u4Items[1].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[1].url}}" alt=""></a>
                         <a ng-href="/detail/{{u4Items[2].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[2].url}}" alt=""></a>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-6 col-sm-4">
                         <a ng-href="/detail/{{u4Items[3].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[3].url}}" alt=""></a>
                         <a ng-href="/detail/{{u4Items[4].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[4].url}}" alt=""></a>
                         <a ng-href="/detail/{{u4Items[5].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[5].url}}" alt=""></a>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="hidden-xs col-sm-4">
                         <a ng-href="/detail/{{u4Items[6].id}}"><img class="page-home-u2-item" ng-src="{{u4Items[6].url}}" alt=""></a>
                     </div>
                 </div>
@@ -180,19 +216,37 @@
                         <img class="page-home-u1-title-splitter" src="/images/f1-splitter.png" alt="ui-title">
                     </div>
                 </div>
-                <div class="row page-home-f1-content">
-                    <div class="col-xs-3">
+                <div class="row row-no-padding page-home-f1-content">
+                    <div class="col-xs-5 col-sm-3">
                         <a href="/designer"><img class="page-home-f1-item" src="/images/f3-profile.jpg" alt=""></a>
                     </div>
-                    <div class="col-xs-9">
-                        <div class="row">
-                            <div class="col-xs-3" ng-repeat="f3Item in f1Items">
-                                <a ng-href="/detail/{{f3Item.id}}"><img class="page-home-f1-item" ng-src="{{f3Item.url}}" alt=""></a>
+                    <div class="col-xs-7 col-sm-9">
+                        <div class="row row-padding-3">
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f3Items[0].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[0].url}}" alt=""></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f3Items[1].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[1].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f3Items[2].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[2].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f3Items[3].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[3].url}}" alt=""></a>
                             </div>
                         </div>
-                        <div class="row" style="margin-top:6px;">
-                            <div class="col-xs-3" ng-repeat="f3Item in f1Items">
-                                <a ng-href="/detail/{{f3Item.id}}"><img class="page-home-f1-item" ng-src="{{f3Item.url}}" alt=""></a>
+                        <div class="row row-padding-3" style="margin-top:2em;">
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f3Items[1].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[1].url}}" alt=""></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <a ng-href="/detail/{{f3Items[2].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[2].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f3Items[3].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[3].url}}" alt=""></a>
+                            </div>
+                            <div class="hidden-xs col-sm-3">
+                                <a ng-href="/detail/{{f3Items[4].id}}"><img class="page-home-f1-item" ng-src="{{f3Items[4].url}}" alt=""></a>
                             </div>
                         </div>
                     </div>

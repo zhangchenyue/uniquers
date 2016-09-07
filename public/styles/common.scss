@@ -21,6 +21,17 @@ body {
   }
 }
 
+
+.row-padding-3 {
+  margin-left: 3px;
+  margin-right: 3px;
+  [class*="col-"] {
+    padding-left:3px !important;
+    padding-right: 3px !important;
+  }
+}
+
+
 #about,
 #designer,
 #detail,
