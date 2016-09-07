@@ -35,12 +35,18 @@
             cursor: pointer;
         }
 
+        .size-row-options > div{
+             border: 1px dashed #c5c5c5;
+             background-color: #e5e5e5;
+             color: #c5c5c5;
+         }
+
         .size-row-options .active,
         .rent-row-options .active{
             border: 1px solid black;
+            color: black;
         }
 
-        .size-row-options .size-chosen-img,
         .rent-row-options .size-chosen-img{
             position: absolute;
             right: 0;

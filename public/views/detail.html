@@ -53,19 +53,15 @@
                     <div class="col-xs-9 size-row-options" ng-init="size = 'M' ">
                         <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'S'" ng-class="{active:size=='S'}">
                             <span>S码</span>
-                            <img ng-if="size=='S'" class="size-chosen-img" src="./images/chosen.png" alt="">
                         </div>
                         <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'M'" ng-class="{active:size=='M'}">
                             <span>M码</span>
-                            <img ng-if="size=='M'" class="size-chosen-img" src="./images/chosen.png" alt="">
                         </div>
                         <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'L'" ng-class="{active:size=='L'}">
                             <span>L码</span>
-                            <img ng-if="size=='L'" class="size-chosen-img" src="./images/chosen.png" alt="">
                         </div>
                         <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'XL'" ng-class="{active:size=='XL'}">
                             <span>XL码</span>
-                            <img ng-if="size=='XL'" class="size-chosen-img" src="./images/chosen.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -73,9 +69,9 @@
                 <div class="row row-no-padding amount-row">
                     <div class="col-xs-3">数量</div>
                     <div class="col-xs-9 amount-row-options">
-                        <span class="col-xs-2 btn btn-default btn-sm">-</span>
-                        <input type="text" class="col-xs-5" aria-label="Amount" value="1">
-                        <span class="col-xs-2 btn btn-default btn-sm">+</span>
+                        <span class="col-xs-2 btn btn-default btn-sm" ng-click="substractAmount()">-</span>
+                        <input ng-model="amount" type="number" class="col-xs-5" aria-label="Amount">
+                        <span class="col-xs-2 btn btn-default btn-sm" ng-click="addAmount()">+</span>
                     </div>
                 </div>
 
