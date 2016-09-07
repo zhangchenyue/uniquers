@@ -10,21 +10,21 @@ db.push({
 db.push({
     id: db.length,
     type: 'ad',
-    url: '/images/ad2.jpg',
+    url: '/images/ad1.jpg',
     text: ''
 });
 
 db.push({
     id: db.length,
     type: 'ad',
-    url: '/images/ad3.jpg',
+    url: '/images/ad1.jpg',
     text: ''
 });
 
 db.push({
     id: db.length,
     type: 'ad',
-    url: '/images/ad4.jpg',
+    url: '/images/ad1.jpg',
     text: ''
 });
 

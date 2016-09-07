@@ -1,3 +1,4 @@
 <div id="page-login">
-    <img class="page-login-bk" src="/images/loginbk.jpg" alt="">
+    <img ng-if="isPhone()" class="page-login-bk" src="/images/loginbk-iphone.jpg" alt="">
+    <img ng-if="!isPhone()" class="page-login-bk" src="/images/loginbk.jpg" alt="">
 </div>
