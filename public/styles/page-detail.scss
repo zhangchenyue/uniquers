@@ -35,11 +35,13 @@
             cursor: pointer;
         }
 
-        .size-row-options .active{
+        .size-row-options .active,
+        .rent-row-options .active{
             border: 1px solid black;
         }
 
-        .size-row-options .size-chosen-img{
+        .size-row-options .size-chosen-img,
+        .rent-row-options .size-chosen-img{
             position: absolute;
             right: 0;
             bottom: 0;
