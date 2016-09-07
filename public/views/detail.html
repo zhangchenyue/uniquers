@@ -2,13 +2,6 @@
 <header ng-include="'/views/nav-top.html'"></header>
 
 <div id="detail">
-    <!--<h1>详情</h1>
-    <img ng-src="{{itemUrl}}" alt="item detail">
-    <p>
-        <a href="/home">
-            <h3>回到主页</h3>
-        </a>
-    </p>-->
     <div class="container-fluid site-map">
         <a href="/home">首页 > </a>
         <a href="/designer">设计师品牌 > </a>
@@ -57,11 +50,23 @@
 
                 <div class="row row-no-padding size-row">
                     <div class="col-xs-3">尺码</div>
-                    <div class="col-xs-9 size-row-options">
-                        <div class="col-xs-5 col-sm-2 col-md-2">S码</div>
-                        <div class="col-xs-5 col-sm-2 col-md-2">M码</div>
-                        <div class="col-xs-5 col-sm-2 col-md-2">L码</div>
-                        <div class="col-xs-5 col-sm-2 col-md-2">XL码</div>
+                    <div class="col-xs-9 size-row-options" ng-init="size = 'M' ">
+                        <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'S'" ng-class="{active:size=='S'}">
+                            <span>S码</span>
+                            <img ng-if="size=='S'" class="size-chosen-img" src="./images/chosen.png" alt="">
+                        </div>
+                        <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'M'" ng-class="{active:size=='M'}">
+                            <span>M码</span>
+                            <img ng-if="size=='M'" class="size-chosen-img" src="./images/chosen.png" alt="">
+                        </div>
+                        <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'L'" ng-class="{active:size=='L'}">
+                            <span>L码</span>
+                            <img ng-if="size=='L'" class="size-chosen-img" src="./images/chosen.png" alt="">
+                        </div>
+                        <div class="col-xs-5 col-sm-2 col-md-2" ng-click="size = 'XL'" ng-class="{active:size=='XL'}">
+                            <span>XL码</span>
+                            <img ng-if="size=='XL'" class="size-chosen-img" src="./images/chosen.png" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -131,12 +136,12 @@
                 <div class="designer-comment-title"><img src="./images/designer-comment-title.png" alt=""></div>
                 <div class="list-group">
                     <a href="#" class="row row-no-padding list-group-item">
-                        <img  class="col-xs-2" src="./images/designer-comment-profile-01.png" alt="">
+                        <img class="col-xs-2" src="./images/designer-comment-profile-01.png" alt="">
                         <span class="col-xs-offset-1 col-xs-9">真好看，特别合身，同事说这裙子特显瘦这是我在ZK上买的最满意的衣服了。料子很舒服</span>
                     </a>
                     <a href="#" class="row row-no-padding list-group-item">
-                        <img  class="col-xs-2" src="./images/designer-comment-profile-02.png" alt="">
-                        <span  class="col-xs-offset-1 col-xs-9" >面料柔软，舒适度很好，一点都不透，而且特别显身材，客服推荐的M号很合适</span>
+                        <img class="col-xs-2" src="./images/designer-comment-profile-02.png" alt="">
+                        <span class="col-xs-offset-1 col-xs-9">面料柔软，舒适度很好，一点都不透，而且特别显身材，客服推荐的M号很合适</span>
                     </a>
                     <a href="#" class="row row-no-padding list-group-item">
                         <img class="col-xs-2" src="./images/designer-comment-profile-03.png" alt="">

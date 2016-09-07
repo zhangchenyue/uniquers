@@ -32,6 +32,17 @@
             margin-bottom: .8em;
             padding: .1em .5em;
             text-align: center;
+            cursor: pointer;
+        }
+
+        .size-row-options .active{
+            border: 1px solid black;
+        }
+
+        .size-row-options .size-chosen-img{
+            position: absolute;
+            right: 0;
+            bottom: 0;
         }
 
         .amount-row-options > span,
