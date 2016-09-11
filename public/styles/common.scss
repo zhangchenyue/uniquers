@@ -6,6 +6,7 @@ body {
     padding: 0;
     font-family: $fontStack;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .container-fluid{
