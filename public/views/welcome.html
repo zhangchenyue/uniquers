@@ -2,21 +2,21 @@
     <div class="page-welcome-images" ng-init="choice = '' ">
         <img ng-if="!isPhone()" class="face-base" src="/images/face03.jpg" alt="">
         <img ng-if="isPhone()" class="face-base" src="/images/face-phone-03.png" alt="">
-        <a class="face-left" ng-mouseover="choice = 'man' " ng-mouseleave="choice = '' " href="javascript:void(0)" ng-click="gotoHome()">
-            <img ng-if="!isPhone()" src="/images/face02.jpg" alt="">
+        <a class="face-left" ng-mouseover="choice = 'man' " ng-mouseleave="choice = '' " href="javascript:void(0)" >
+            <img ng-if="!isPhone()" src="/images/face02.jpg" alt="" ng-click="gotoHome()">
             <img ng-if="isPhone()" src="/images/face-phone-02.png" alt="">
         </a>
-        <a class="face-right" ng-mouseover="choice = 'woman' " ng-mouseleave="choice = '' " href="javascript:void(0)" ng-click="gotoHome()">
-            <img ng-if="!isPhone()" src="/images/face01.jpg" alt="">
+        <a class="face-right" ng-mouseover="choice = 'woman' " ng-mouseleave="choice = '' " href="javascript:void(0)" >
+            <img ng-if="!isPhone()" src="/images/face01.jpg" alt="" ng-click="gotoHome()">
             <img ng-if="isPhone()" src="/images/face-phone-01.png" alt="">
         </a>
         <a class="face-phone-text" ng-if="choice == '' " href="javascript:void(0)">
             <img ng-if="isPhone()" src="/images/face-phone-empty.png" alt="">
         </a>
-        <a class="face-phone-text" ng-if="choice == 'man' " href="javascript:void(0)">
+        <a class="face-phone-text" ng-show="choice == 'man' " href="javascript:void(0)" ng-click="gotoHome()">
             <img ng-if="isPhone()" src="/images/face-phone-man.png" alt="">
         </a>
-         <a class="face-phone-text"  ng-if="choice == 'woman' "  href="javascript:void(0)">
+         <a class="face-phone-text"  ng-show="choice == 'woman' "  href="javascript:void(0)" ng-click="gotoHome()">
             <img ng-if="isPhone()" src="/images/face-phone-woman.png" alt="">
         </a>
     </div>

@@ -5,10 +5,11 @@ angular.module('uniquers.controllers').controller('WelcomeCtrl', [
     '$location',
     'ajaxProxy',
     function ($scope, $rootScope, $timeout, $location, ajaxProxy) {
+        var t = $rootScope.isPhone() ? 0 : 1000;
         $scope.gotoHome = function () {
             $timeout(function () {
                 $location.path('/home')
-            }, 1000);
+            }, t);
         };
 
         $scope.gotoLogin = function () {
