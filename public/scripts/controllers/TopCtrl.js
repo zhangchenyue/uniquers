@@ -4,6 +4,7 @@ angular.module('uniquers.controllers').controller('TopCtrl', [
     '$location',
     function ($scope, $rootScope, $location) {
         $rootScope.profileImgSrc = $rootScope.profileImgSrc || '/images/profile.png'
+
         $scope.username = 'Top';
         $scope.userMenuShow = '';
         $rootScope.$on('$routeChangeSuccess', function (evt, current, previous) {
@@ -11,15 +12,15 @@ angular.module('uniquers.controllers').controller('TopCtrl', [
             $rootScope.$broadcast(path);
         });
 
-         $scope.isActive = function (viewLocation) {
+        $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
 
-        $scope.toggleMenu = function(){
-            if($scope.userMenuShow == 'user-menu-hide' || $scope.userMenuShow ==''){
+        $scope.toggleMenu = function () {
+            if ($scope.userMenuShow == 'user-menu-hide' || $scope.userMenuShow == '') {
                 $scope.userMenuShow = 'user-menu-show';
-            }else{
-                 $scope.userMenuShow = 'user-menu-hide';
+            } else {
+                $scope.userMenuShow = 'user-menu-hide';
             }
         }
     }
