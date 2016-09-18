@@ -6,11 +6,22 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   cssmin = require('gulp-cssmin'),
   uglify = require('gulp-uglify'),
-  rev = require('gulp-rev'),
   zip = require('gulp-zip'),
-  revCollector = require('gulp-rev-collector'),
+  inject = require('gulp-inject'),
   browserSync = require('browser-sync'),
   runSequence = require('run-sequence');
+
+
+function createToken() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + s4() + s4() + s4();
+};
+
+var hash = createToken();
 
 //source files
 var srcJS = [
@@ -35,7 +46,7 @@ var srcCSS = [
 
 /*--------------------Tasks-------------------*/
 gulp.task('clean', function () {
-  return gulp.src(['rev', 'public/dist'], { read: false })
+  return gulp.src(['public/dist'], { read: false })
     .pipe(clean());
 });
 
@@ -45,66 +56,52 @@ gulp.task('clean:package', function () {
 });
 
 gulp.task('min:js', function () {
-  gulp.src(srcJS, { base: '.' })
-    .pipe(concat('min.js'))
+  return gulp.src(srcJS, { base: '.' })
+    .pipe(concat('min-' + hash + '.js'))
     .pipe(uglify())
-    .pipe(rev())
-    .pipe(gulp.dest('./public/dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('rev/js'));
+    .pipe(gulp.dest('./public/dist/'));
 });
 
 gulp.task('min:css', function () {
-  gulp.src(srcCSS, { base: '.' })
+  return gulp.src(srcCSS, { base: '.' })
     .pipe(sass())
-    .pipe(concat('min.css'))
+    .pipe(concat('min-' + hash + '.css'))
     .pipe(cssmin())
-    .pipe(rev())
-    .pipe(gulp.dest('./public/dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('rev/css'));
+    .pipe(gulp.dest('./public/dist/'));
 });
 
 gulp.task('cat:js', function () {
-  gulp.src(srcJS, { base: '.' })
+  return gulp.src(srcJS, { base: '.' })
     .pipe(concat('min.js'))
-    .pipe(rev())
-    .pipe(gulp.dest('./public/dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('rev/js'));
+    .pipe(gulp.dest('./public/dist/'));
 });
 
 gulp.task('cat:css', function () {
-  gulp.src(srcCSS, { base: '.' })
+  return gulp.src(srcCSS, { base: '.' })
     .pipe(sass())
     .pipe(concat('min.css'))
-    .pipe(rev())
-    .pipe(gulp.dest('./public/dist/'))
-    .pipe(rev.manifest())
-    .pipe(gulp.dest('rev/css'));
+    .pipe(gulp.dest('./public/dist/'));
 });
 
-gulp.task('min', ['min:js', 'min:css']);
-
-//support rewrite url in html
-gulp.task('rev', function () {
-  gulp.src(['./rev/**/*.json', './public/index.html'])
-    .pipe(revCollector({
-      replaceReved: true
-    }))
-    .pipe(gulp.dest('./public/'));
+// Generate new index html 
+gulp.task('inject', function () {
+  return gulp.src('./public/index.html')
+    .pipe(inject(gulp.src([
+      './public/dist/min*.js',
+      './public/dist/min*.css'
+    ],
+      { read: false }),
+      { ignorePath: 'public' }))
+    .pipe(gulp.dest('public'));
 });
-
 
 gulp.task('package', ['clean:package'], function () {
   var files = [
     './**',
-    '!./{rev,rev/**}',
     '!./{.git,.git/**}',
     '!./{._package,._package/**}',
     '!./{public/styles,public/styles/**}',
     '!./{public/scripts,public/scripts/**}',
-    '!./{rev,rev/**}',
     '!./gulpfile.js',
     '!./.gitignore',
     '!./README.md',
@@ -129,7 +126,6 @@ gulp.task('serve', function () {
 
 //add browser refresh
 gulp.task('browser-sync', ['serve'], function () {
-  gulp.watch("rev/**/*", ['rev']);
   gulp.watch(["public/scripts/**/*.*",], ['min:js']);
   gulp.watch("public/styles/**/*.*", ['min:css']);
   gulp.watch("public/**/*.html").on('change', browserSync.reload);
@@ -144,15 +140,14 @@ gulp.task('browser-sync', ['serve'], function () {
 
 //for npm release
 gulp.task('deploy', ['clean'], function () {
-  runSequence(['min:css', 'min:js']);
+  return runSequence(['min:js', 'min:css'],'inject');
 });
 
 gulp.task('debug', ['clean'], function () {
-  runSequence(['cat:css', 'cat:js']);
+  runSequence(['cat:css', 'cat:js'],'inject');
 });
 
 gulp.task('browser-sync-debug', ['serve'], function () {
-  gulp.watch("rev/**/*", ['rev']);
   gulp.watch(["public/scripts/**/*.*",], ['cat:js']);
   gulp.watch("public/styles/**/*.*", ['cat:css']);
   gulp.watch("public/**/*.html").on('change', browserSync.reload);

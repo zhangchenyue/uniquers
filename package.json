@@ -1,12 +1,12 @@
 {
   "name": "uniquers",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node server",
-    "postinstall": "gulp deploy && gulp rev",
-    "prod": "gulp deploy && gulp rev && gulp browser-sync",
-    "debug": "gulp debug && gulp rev && gulp browser-sync-debug"
+    "postinstall": "gulp deploy",
+    "prod": "gulp deploy && gulp browser-sync",
+    "debug": "gulp debug && gulp browser-sync-debug"
   },
   "dependencies": {
     "angular": "^1.5.5",
@@ -29,13 +29,11 @@
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
+    "gulp-inject": "^4.1.0",
     "gulp-nodemon": "^2.0.2",
-    "gulp-rev": "^7.1.0",
-    "gulp-rev-collector": "^1.0.4",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.3",
     "gulp-zip": "^3.2.0",
-    "minimist": "^1.2.0",
     "run-sequence": "^1.2.2"
   }
 }
