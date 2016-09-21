@@ -1,5 +1,5 @@
 var passportAuth = require('passport');
-var TqqStrategy = require('passport-tqq/').Strategy;
+var TqqStrategy = require('passport-tqq').Strategy;
 
 var QQ_APP_ID = '101332510'
 var QQ_APP_KEY = 'c138d5bc7f7d806a649bf4400715b698';
