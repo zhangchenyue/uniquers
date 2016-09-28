@@ -65,6 +65,7 @@ gulp.task('min:js', function () {
 gulp.task('min:css', function () {
   return gulp.src(srcCSS, { base: '.' })
     .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(concat('min-' + hash + '.css'))
     .pipe(cssmin())
     .pipe(gulp.dest('./public/dist/'));
@@ -79,6 +80,7 @@ gulp.task('cat:js', function () {
 gulp.task('cat:css', function () {
   return gulp.src(srcCSS, { base: '.' })
     .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(concat('min.css'))
     .pipe(gulp.dest('./public/dist/'));
 });

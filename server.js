@@ -19,9 +19,7 @@ server.locals.ENV_DEVELOPMENT = env == 'development';
 server.use(favicon(__dirname + '/public/favicon.ico'));
 server.use(logger('dev'));
 server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({
-    extended: true
-}));
+server.use(bodyParser.urlencoded({ extended: true }));
 server.use(session({
     resave: false,
     saveUninitialized: true,
