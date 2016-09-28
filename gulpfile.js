@@ -9,6 +9,7 @@ var gulp = require('gulp'),
   zip = require('gulp-zip'),
   inject = require('gulp-inject'),
   browserSync = require('browser-sync'),
+  autoprefixer = require('gulp-autoprefixer');
   runSequence = require('run-sequence');
 
 
