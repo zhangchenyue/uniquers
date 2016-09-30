@@ -156,7 +156,7 @@ gulp.task('browser-sync-debug', ['serve'], function () {
   gulp.watch("public/**/*.html").on('change', browserSync.reload);
   browserSync.init(null, {
     proxy: 'http://localhost:3000',
-    browser: 'google chrome',
+    browser: 'chrome',
     notify: false,
     port: 5000
   });
