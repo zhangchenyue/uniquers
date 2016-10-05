@@ -45,13 +45,13 @@
 .face-left:hover,
 .face-left.hover {
     opacity: 0;
-    transition: all 1s
+    transition: opacity 1s;
 }
 
 .face-right:hover,
 .face-right.hover {
     opacity: 0;
-    transition: all 1s
+    transition: opacity 1s;
 }
 
 .face-phone-text {
