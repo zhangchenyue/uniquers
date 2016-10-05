@@ -10,14 +10,14 @@
             <img ng-if="!isPhone()" src="/images/face01.jpg" alt="" ng-click="gotoHome()">
             <img ng-if="isPhone()" src="/images/face-phone-01.png" alt="">
         </a>
-        <a class="face-phone-text" ng-if="choice == '' " href="javascript:void(0)">
+        <!--<a class="face-phone-text" ng-if="choice == '' " href="javascript:void(0)">
             <img ng-if="isPhone()" src="/images/face-phone-empty.png" alt="">
+        </a>-->
+        <a class="face-phone-text" ng-show="choice == 'man' " href="/home">
+            <img ng-if="isPhone()" src="/images/face-phone-man.png" alt="" >
         </a>
-        <a class="face-phone-text" ng-show="choice == 'man' " href="javascript:void(0)">
-            <img ng-if="isPhone()" src="/images/face-phone-man.png" alt=""  ng-click="gotoHome()">
-        </a>
-         <a class="face-phone-text"  ng-show="choice == 'woman' "  href="javascript:void(0)" >
-            <img ng-if="isPhone()" src="/images/face-phone-woman.png" alt="" ng-click="gotoHome()">
+         <a class="face-phone-text"  ng-show="choice == 'woman' "  href="/home" >
+            <img ng-if="isPhone()" src="/images/face-phone-woman.png" alt="" >
         </a>
     </div>
 </div>
