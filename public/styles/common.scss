@@ -14,7 +14,7 @@ body{
 }
 
 body * {
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .container-fluid{
