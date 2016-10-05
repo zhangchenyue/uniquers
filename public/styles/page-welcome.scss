@@ -46,14 +46,14 @@
 .face-left.hover {
     opacity: 0;
     backface-visibility: hidden;
-    transition: opacity 1s;
+    //transition: opacity 1s;
 }
 
 .face-right:hover,
 .face-right.hover {
     opacity: 0;
     backface-visibility: hidden;
-    transition: opacity 1s; 
+    //transition: opacity 1s; 
 }
 
 .face-phone-text {
